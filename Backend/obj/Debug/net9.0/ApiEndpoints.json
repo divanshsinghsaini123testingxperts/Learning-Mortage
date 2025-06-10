@@ -1,0 +1,103 @@
+[
+  {
+    "ContainingType": "Backend.Controllers.EmployeeController",
+    "Method": "Forgot_Password_mailcheck",
+    "RelativePath": "api/Employee/Forgot_Password_mailcheck",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "e",
+        "Type": "Backend.Models.Entity.Emailh",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.EmployeeController",
+    "Method": "Forgot_Password_otpcheck",
+    "RelativePath": "api/Employee/Forgot_Password_otpcheck",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "temp",
+        "Type": "Backend.Models.Entity.mailotp",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.EmployeeController",
+    "Method": "LoginRequest",
+    "RelativePath": "api/Employee/LoginRequest",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "Backend.Models.Entity.LoginDetailsDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.EmployeeController",
+    "Method": "Register",
+    "RelativePath": "api/Employee/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Backend.Models.Entity.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.EmployeeController",
+    "Method": "SetNewPassword",
+    "RelativePath": "api/Employee/SetNewPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Backend.Models.Entity.LoginDetailsDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Backend.WeatherForecast, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]
