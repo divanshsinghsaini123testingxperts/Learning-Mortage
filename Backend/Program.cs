@@ -2,10 +2,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using System;
-using Backend.Models.Data;
 using Backend.Models;
-using Backend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
