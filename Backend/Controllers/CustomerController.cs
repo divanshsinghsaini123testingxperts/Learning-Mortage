@@ -79,7 +79,6 @@ namespace Backend.Controllers
             _context.Customers.Update(existingCustomer);
             await _context.SaveChangesAsync();
             return Ok("Customer updated successfully.");
-
         }
 
     }

@@ -21,8 +21,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.vs\Backend
 
+/Backend/.vs/Backend/FileContentIndex
 
 # Build results
 bin/
