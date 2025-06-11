@@ -21,7 +21,6 @@ C:\Users\Testing\Desktop\Learning Mortgage\Backend\obj\Debug\net9.0\staticwebass
 C:\Users\Testing\Desktop\Learning Mortgage\Backend\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\Testing\Desktop\Learning Mortgage\Backend\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\Testing\Desktop\Learning Mortgage\Backend\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Users\Testing\Desktop\Learning Mortgage\Backend\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\Testing\Desktop\Learning Mortgage\Backend\obj\Debug\net9.0\Backend.csproj.Up2Date
 C:\Users\Testing\Desktop\Learning Mortgage\Backend\obj\Debug\net9.0\Backend.dll
 C:\Users\Testing\Desktop\Learning Mortgage\Backend\obj\Debug\net9.0\refint\Backend.dll

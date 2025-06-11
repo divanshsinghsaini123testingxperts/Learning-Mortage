@@ -7,13 +7,13 @@ public partial class Customer
 {
     public int Id { get; set; }
 
-    public string Name { get; set; } = null!;
+    public string? Name { get; set; }
 
-    public string Email { get; set; } = null!;
+    public string? Email { get; set; }
 
-    public string Address { get; set; } = null!;
+    public string? Address { get; set; }
 
-    public int? Empid { get; set; }
+    public int? EmpId { get; set; }
 
     public virtual Employee? Emp { get; set; }
 }

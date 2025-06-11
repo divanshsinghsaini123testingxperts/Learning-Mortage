@@ -56,7 +56,7 @@ namespace Backend.Controllers
                 return BadRequest("Customer with this email already exists.");
             }
             _context.Customers.Add(customer);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             return Ok("Customer added successfully.");
         }
         // update a customer by customer id 

@@ -7,13 +7,13 @@ public partial class Employee
 {
     public int Id { get; set; }
 
-    public string Name { get; set; } = null!;
+    public string? Name { get; set; }
 
-    public string Email { get; set; } = null!;
+    public string? Email { get; set; }
 
-    public string Password { get; set; } = null!;
+    public string? Password { get; set; }
 
-    public string Role { get; set; } = null!;
+    public string? Role { get; set; }
 
     public virtual ICollection<Customer> Customers { get; set; } = new List<Customer>();
 }

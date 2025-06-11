@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { defaultAllowedOrigins } from 'vite';
 
 function ForgotPassword() {
     const navigate = useNavigate();
@@ -8,6 +9,7 @@ function ForgotPassword() {
     const [sent, setSent] = useState(false);
     const [email, setEmail] = useState(location.state?.email);
     const [otp, setOtp] = useState();
+    
     const Checkmail = () => {
         if (!email) {
             alert("Please enter your email");

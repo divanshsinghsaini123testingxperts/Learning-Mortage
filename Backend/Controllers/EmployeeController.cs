@@ -19,7 +19,7 @@ namespace Backend.Controllers
         [HttpPost("Register")]
         public IActionResult Register(User user)
         {
-            user.Id = 0; // Ensure the ID is not explicitly set to avoid conflict with identity column
+            //user.Id = 0; 
 
             var eml = _context.Employees.FirstOrDefault(u => u.Email == user.Email);
             if (eml != null)
@@ -28,6 +28,7 @@ namespace Backend.Controllers
             }
             var Emp = new Employee
             {
+               
                 Name = user.Name,
                 Email = user.Email,
                 Password = user.Password, // Ensure password is hashed in a real application
