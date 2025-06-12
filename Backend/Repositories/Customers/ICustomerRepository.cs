@@ -1,10 +1,11 @@
 using Backend.Models;
+using Backend.Models.Entity;
 
 namespace Backend.Repositories.Customers
 {
     public interface ICustomerRepository
     {
-        Task<List<Customer>> GetByEmployeeIdAsync(int employeeId);
+        Task<List<GetEmployeeDTO>> GetByEmployeeIdAsync(int employeeId);
         Task<Customer?> GetByIdAsync(int customerId);
         Task AddAsync(Customer customer);
         Task<bool> ExistsByEmailAsync(string email);

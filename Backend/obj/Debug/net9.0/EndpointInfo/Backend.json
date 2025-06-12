@@ -310,7 +310,7 @@
             "type": "string",
             "nullable": true
           },
-          "empid": {
+          "empId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -381,6 +381,10 @@
       "User": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
           "name": {
             "type": "string",
             "nullable": true

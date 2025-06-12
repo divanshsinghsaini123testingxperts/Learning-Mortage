@@ -71,7 +71,10 @@ namespace Backend.Controllers
             var otp = rand.Next(100000, 1000000);
             OtpStore.EmailOtpMap[e.Email] = otp;
 
-            string template = System.IO.File.ReadAllText("/Backend/Template/mail_temp.html");
+            //string template = System.IO.File.ReadAllText("/Backend/Template/mail_temp.html");
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "Template", "mail_temp.html");
+            string template = System.IO.File.ReadAllText(path);
+
             string emailBody = template.Replace("123456", otp.ToString());
             _emailService.SendCustomEmail(e.Email, emailBody).Wait();
 

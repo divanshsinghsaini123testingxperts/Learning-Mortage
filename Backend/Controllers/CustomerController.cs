@@ -65,8 +65,8 @@ namespace Backend.Controllers
                 return NotFound("Employee not found. OR Enter valid Customer Details ");
             }
             //check the customer exits or not 
-            var isExists = await _customerRepository.GetByIdAsync(EmployeeId);
-            if (isExists == null)
+            var isExists = await _customerRepository.GetByIdAsync(customer.Id);
+            if (isExists != null)
             {
                 return BadRequest("Customer with this email already exists.");
             }

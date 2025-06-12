@@ -1,4 +1,5 @@
 using Backend.Models;
+using Backend.Models.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Repositories.Customers
@@ -11,13 +12,13 @@ namespace Backend.Repositories.Customers
             _context = context;
         }
 
-        public async Task<List<Customer>> GetByEmployeeIdAsync(int employeeId)
+        public async Task<List<GetEmployeeDTO>> GetByEmployeeIdAsync(int employeeId)
         {
-            var customers = await _context.Customers
-                .FromSqlRaw("EXEC GetCustomersByEmployeeId @EmpId = {0}", employeeId)
-                .ToListAsync();
-            //return await _context.Customers.Where(c => c.EmpId == employeeId).ToListAsync();
-            return customers;
+            var data = await _context.GetEmployeeDTO
+            .FromSqlInterpolated($"EXEC GetCustomersByEmployeeId @EmployeeId = {employeeId}")
+            .ToListAsync();
+
+            return data;
         }
 
         public async Task<Customer?> GetByIdAsync(int customerId)
@@ -28,6 +29,7 @@ namespace Backend.Repositories.Customers
         public async Task AddAsync(Customer customer)
         {
             await _context.Customers.AddAsync(customer);
+
         }
 
         public async Task<bool> ExistsByEmailAsync(string email)

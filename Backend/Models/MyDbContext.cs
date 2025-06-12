@@ -1,6 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Backend.Models.Entity;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 
 namespace Backend.Models;
 
@@ -66,6 +67,7 @@ public partial class MyDbContext : DbContext
 
         OnModelCreatingPartial(modelBuilder);
     }
+    public DbSet<GetEmployeeDTO> GetEmployeeDTO { get; set; } // This is only used for mapping, not real table
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
