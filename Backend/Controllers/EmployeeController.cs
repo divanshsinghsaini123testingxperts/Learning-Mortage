@@ -4,17 +4,20 @@ using Backend.Models.Entity;
 using Backend.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.AccessControl;
+using Backend.Interfaces;
 namespace Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController : Controller
     {
+        private readonly IEmailService _emailService;
         private readonly MyDbContext _context;
-        private readonly TokenService _tokenService;
-        public EmployeeController(MyDbContext context , TokenService tokan) {
+        private readonly ITokenService _tokenService;
+        public EmployeeController(MyDbContext context , ITokenService tokan , IEmailService _EmailService) {
             _context = context; 
             _tokenService = tokan; 
+            _emailService = _EmailService; // Initialize the email service
         }
         [HttpPost("Register")]
         public IActionResult Register(User user)
@@ -66,20 +69,18 @@ namespace Backend.Controllers
             // Implement the logic of sending email to user, to that particular mail
             var rand = new Random();
             var otp = rand.Next(100000, 1000000);
-            OtpStore.EmailOtpMap[e.Email] = otp; // ✅ Save OTP per user
-            // Corrected the usage of File.ReadAllText to avoid conflict with ControllerBase.File method
+            OtpStore.EmailOtpMap[e.Email] = otp;
+
             string template = System.IO.File.ReadAllText("/Backend/Template/mail_temp.html");
             string emailBody = template.Replace("123456", otp.ToString());
-            var emailService = new EmailService();
-            emailService.SendCustomEmail(e.Email, emailBody).Wait();
-            // Logic for sending email can be added here
+            _emailService.SendCustomEmail(e.Email, emailBody).Wait();
 
             return Ok();
         }
         [HttpPost("Forgot_Password_otpcheck")]
         public IActionResult Forgot_Password_otpcheck(mailotp temp)
         {
-            //var user = _context.Users.FirstOrDefault(u => u.Email == temp.Email);
+           
             var user = _context.Employees.FirstOrDefault(u => u.Email == temp.Email);
             if (user == null) return BadRequest("User not found");
 

@@ -3,7 +3,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Backend.Models;
-
+using Backend.Interfaces;
+using Backend.Services;
+using Backend.Repositories.Customers;
+using Backend.Repositories.Employees;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
@@ -39,13 +42,19 @@ builder.Services.AddSwaggerGen(opt =>
     });
 });
 
+// Register services for dependency injection
+builder.Services.AddSingleton<ITokenService, TokenService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+
 // Database connection
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<MyDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 // Dependency injection
-builder.Services.AddSingleton<TokenService>();
+//builder.Services.AddSingleton<TokenService>();
 
 // Configure CORS
 builder.Services.AddCors(options =>
@@ -53,7 +62,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp", policyBuilder =>
     {
         policyBuilder
-            .WithOrigins("http://localhost:5173", "http://localhost:5174") // your frontend dev ports
+            .WithOrigins("http://localhost:5173", "http://localhost:5174") 
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials();
@@ -75,7 +84,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
             IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
-                System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+               System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
         };
     });
 
@@ -90,9 +99,9 @@ if (app.Environment.IsDevelopment())
 
 // Middleware order matters!
 app.UseHttpsRedirection();
-app.UseRouting();                    // ✅ REQUIRED before CORS/auth
-app.UseCors("AllowReactApp");        // ✅ CORS after routing
-app.UseAuthentication();             // ✅ Add this line if using JWT
+app.UseRouting();                    
+app.UseCors("AllowReactApp");        
+app.UseAuthentication();             
 app.UseAuthorization();
 
 app.MapControllers();

@@ -2,10 +2,10 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-
+using Backend.Interfaces;
 namespace Backend.Services
 {
-    public class TokenService
+    public class TokenService : ITokenService
     {
         private readonly string _secretKey;
         private readonly string _issuer;

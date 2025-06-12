@@ -26,46 +26,42 @@ public partial class MyDbContext : DbContext
     {
         modelBuilder.Entity<Customer>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Customer__3214EC27D02AA702");
+            entity.HasKey(e => e.Id).HasName("PK__Customer__3214EC07C24DDE46");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("ID");
             entity.Property(e => e.Address)
-                .HasMaxLength(255)
+                .HasMaxLength(100)
                 .IsUnicode(false);
             entity.Property(e => e.Email)
-                .HasMaxLength(255)
+                .HasMaxLength(100)
                 .IsUnicode(false);
             entity.Property(e => e.Name)
-                .HasMaxLength(255)
+                .HasMaxLength(100)
                 .IsUnicode(false);
 
             entity.HasOne(d => d.Emp).WithMany(p => p.Customers)
-                .HasForeignKey(d => d.Empid)
-                .HasConstraintName("FK__Customers__Empid__4BAC3F29");
+                .HasForeignKey(d => d.EmpId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK__Customers__EmpId__06CD04F7");
         });
 
         modelBuilder.Entity<Employee>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Employee__3214EC2749E284E2");
+            entity.HasKey(e => e.Id).HasName("PK__Employee__3214EC07EA7B172F");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("ID");
+            entity.HasIndex(e => e.Email, "UQ__Employee__A9D10534420A93D5").IsUnique();
+
             entity.Property(e => e.Email)
-                .HasMaxLength(255)
+                .HasMaxLength(100)
                 .IsUnicode(false);
             entity.Property(e => e.Name)
-                .HasMaxLength(255)
+                .HasMaxLength(100)
                 .IsUnicode(false);
             entity.Property(e => e.Password)
-                .HasMaxLength(255)
+                .HasMaxLength(100)
                 .IsUnicode(false);
             entity.Property(e => e.Role)
-                .HasMaxLength(255)
-                .IsUnicode(false)
-                .HasColumnName("role");
+                .HasMaxLength(100)
+                .IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);

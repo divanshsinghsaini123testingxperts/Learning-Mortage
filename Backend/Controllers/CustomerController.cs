@@ -4,6 +4,9 @@ using Backend.Models.Data;
 using Backend.Models.Entity;
 using Backend.Services;
 using Microsoft.EntityFrameworkCore;
+using Backend.Interfaces;
+using Backend.Repositories.Customers;
+using Backend.Repositories.Employees;
 namespace Backend.Controllers
 {
     [Route("api/[controller]")]
@@ -11,52 +14,65 @@ namespace Backend.Controllers
     public class CustomerController : Controller
     {
         private readonly MyDbContext _context;
-        private readonly TokenService _tokenService;
+        private readonly ITokenService _tokenService;
+        private readonly ICustomerRepository _customerRepository;
+        private readonly IEmployeeRepository _employeeRepository;
 
-        public CustomerController(MyDbContext context, TokenService tokenService)
+        public CustomerController(MyDbContext context, ITokenService tokenService, ICustomerRepository CustomerRepo, IEmployeeRepository employeeRepository)
         {
             _context = context;
             _tokenService = tokenService;
+            _customerRepository = CustomerRepo;
+            _employeeRepository = employeeRepository;
         }
 
         // Create a function to get all the customers to a particular employee using a stored procedure
         [HttpGet("by-employee/{employeeId}")]
         public async Task<IActionResult> GetCustomersByEmployeeId(int employeeId)
         {
-            // Assuming you have a stored procedure named "GetCustomersByEmployeeId"
-            // and it takes @EmpId as a parameter
-            var customers = await _context.Customers
-                .FromSqlRaw("EXEC GetCustomersByEmployeeId @EmpId = {0}", employeeId)
-                .ToListAsync();
+            var customers = await _customerRepository.GetByEmployeeIdAsync(employeeId);
             return Ok(customers);
         }
-
         // Delete a customer by customer id
+      
+        
         [HttpDelete("{customerId}")]
         public async Task<IActionResult> DeleteCustomer(int customerId)
         {
-            // Assuming you have a stored procedure named "DeleteCustomerById"
-            await _context.Database.ExecuteSqlRawAsync("EXEC DeleteCustomerById @CustomerId = {0}", customerId);
-            return NoContent();
+            try
+            {
+                await _customerRepository.DeleteByIdAsync(customerId);
+                await _customerRepository.SaveChangesAsync();
+                return Ok("Customer deleted successfully.");
+            }
+            catch (Exception ex)
+            {
+                return NotFound("Customer not found.");
+            }
         }
+
+        
         // Add a new customer to perticular employee id using a stored procedure 
         [HttpPost("{EmployeeId}")]
         public async Task<IActionResult> AddCustomer(int EmployeeId, [FromBody] Customer customer)
         {
-            var employee = await _context.Employees.FindAsync(EmployeeId);
+
+            var employee = await _employeeRepository.ExistsByIdAsync(EmployeeId);
+
             //check the user already exists or not 
-            if (employee == null || customer == null)
+            if (!employee  || customer == null)
             {
                 return NotFound("Employee not found. OR Enter valid Customer Details ");
             }
             //check the customer exits or not 
-            var isExists = await _context.Customers.AnyAsync(c => c.Email == customer.Email);
-            if (isExists)
+            var isExists = await _customerRepository.GetByIdAsync(EmployeeId);
+            if (isExists == null)
             {
                 return BadRequest("Customer with this email already exists.");
             }
-            _context.Customers.Add(customer);
-            await _context.SaveChangesAsync();
+
+            await _customerRepository.AddAsync(customer);
+            await _customerRepository.SaveChangesAsync();
             return Ok("Customer added successfully.");
         }
         // update a customer by customer id 
@@ -67,17 +83,13 @@ namespace Backend.Controllers
             {
                 return BadRequest("Customer ID mismatch.");
             }
-            var existingCustomer = await _context.Customers.FindAsync(customerId);
-            if (existingCustomer == null)
+
+            var existingCustomer = await _customerRepository.UpdateCustomer(customerId , customer);
+            if (!existingCustomer )
             {
                 return NotFound("Customer not found.");
             }
-            existingCustomer.Name = customer.Name;
-            existingCustomer.Email = customer.Email;
-            existingCustomer.Address = customer.Address;
-            existingCustomer.Empid = customer.Empid;
-            _context.Customers.Update(existingCustomer);
-            await _context.SaveChangesAsync();
+            await _customerRepository.SaveChangesAsync();
             return Ok("Customer updated successfully.");
         }
 

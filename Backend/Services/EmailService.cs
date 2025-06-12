@@ -1,12 +1,12 @@
 ﻿using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
-
+using Backend.Interfaces;
 
 
 namespace Backend.Services
 {
-    public class EmailService
+    public class EmailService : IEmailService
     {
         public async Task SendCustomEmail(string toEmail, string body)
         {
