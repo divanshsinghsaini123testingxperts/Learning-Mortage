@@ -123,7 +123,7 @@
   },
   {
     "ContainingType": "Backend.Controllers.EmployeeController",
-    "Method": "Register",
+    "Method": "RegisterAsync",
     "RelativePath": "api/Employee/Register",
     "HttpMethod": "POST",
     "IsController": true,

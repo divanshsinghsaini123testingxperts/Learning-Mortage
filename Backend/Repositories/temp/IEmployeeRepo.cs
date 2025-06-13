@@ -1,10 +1,10 @@
 using Backend.Models;
 
-namespace Backend.Repositories.Employees
+namespace Backend.Repositories.temp
 {
-    public interface IEmployeeRepository
+    public interface IEmployeeRepo
     {
-        Task<Employee?> GetByEmailAsync(string email);
+        //Task<Employee?> GetByEmailAsync(string email);
         Task<Employee?> GetByIdAsync(int id);
         Task AddAsync(Employee employee);
         Task SaveChangesAsync();

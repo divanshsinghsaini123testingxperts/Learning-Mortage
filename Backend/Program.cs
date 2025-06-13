@@ -1,12 +1,11 @@
-﻿using Backend.Services;
+﻿using Backend.Interfaces;
+using Backend.Models;
+using Backend.Repositories;
+using Backend.Repositories.Contract;
+using Backend.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using Backend.Models;
-using Backend.Interfaces;
-using Backend.Services;
-using Backend.Repositories.Customers;
-using Backend.Repositories.Employees;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
@@ -53,19 +52,26 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<MyDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-// Dependency injection
-//builder.Services.AddSingleton<TokenService>();
-
 // Configure CORS
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowReactApp", policyBuilder =>
+//    {
+//        policyBuilder
+//            .WithOrigins("http://localhost:5173", "http://localhost:5174") 
+//            .AllowAnyMethod()
+//            .AllowAnyHeader()
+//            .AllowCredentials();
+//    });
+//});
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp", policyBuilder =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policyBuilder
-            .WithOrigins("http://localhost:5173", "http://localhost:5174") 
-            .AllowAnyMethod()
-            .AllowAnyHeader()
-            .AllowCredentials();
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
     });
 });
 
@@ -100,7 +106,8 @@ if (app.Environment.IsDevelopment())
 // Middleware order matters!
 app.UseHttpsRedirection();
 app.UseRouting();                    
-app.UseCors("AllowReactApp");        
+app.UseCors("AllowAll");
+//app.UseCors("AllowReactApp");
 app.UseAuthentication();             
 app.UseAuthorization();
 

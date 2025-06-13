@@ -2,12 +2,12 @@ using Backend.Models;
 using Backend.Models.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Repositories.Customers
+namespace Backend.Repositories.temp
 {
-    public class CustomerRepository : ICustomerRepository
+    public class CustomerRepo : ICustomerRepo
     {
         private readonly MyDbContext _context;
-        public CustomerRepository(MyDbContext context)
+        public CustomerRepo(MyDbContext context)
         {
             _context = context;
         }

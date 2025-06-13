@@ -8,31 +8,7 @@ import  Login  from './Components/Login.jsx'
 import  Register  from './Components/Register.jsx'
 import ForgotPassword from './Components/ForgotPassword.jsx'
 import NewPass from './Components/NewPass.jsx'
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <App />,
-//     errorElement: <div>Page not found</div>,
-//     children: [
-//       {
-//         path: 'home',
-//         element: <Home />
-//       },
-//       {
-//         path: 'login',   // ✅ lowercase and not nested
-//         element: <Login />
-//       },
-//       {
-//         path: 'register',  // ✅ lowercase and not nested
-//         element: <Register />
-//       },
-//       {
-//         path: 'forgot-password',  // ✅ separate page, not nested under login
-//         element: <ForgotPassword />
-//       }
-//     ]
-//   }
-// ]);
+
 const router = createBrowserRouter([
   {
     path: '/',

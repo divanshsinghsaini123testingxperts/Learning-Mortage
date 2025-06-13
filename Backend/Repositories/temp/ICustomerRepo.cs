@@ -1,9 +1,9 @@
 using Backend.Models;
 using Backend.Models.Entity;
 
-namespace Backend.Repositories.Customers
+namespace Backend.Repositories.temp
 {
-    public interface ICustomerRepository
+    public interface ICustomerRepo
     {
         Task<List<GetEmployeeDTO>> GetByEmployeeIdAsync(int employeeId);
         Task<Customer?> GetByIdAsync(int customerId);
