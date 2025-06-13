@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { defaultAllowedOrigins } from 'vite';
 
 function ForgotPassword() {
     const navigate = useNavigate();
@@ -26,20 +25,21 @@ function ForgotPassword() {
             }
             else {
                 const varificaton = { Email: email, Otp: otp };
-                fetch('https://localhost:7109/api/AuthService/Forgot_Password_otpcheck', {
+                fetch('https://localhost:7294/api/Employee/Forgot_Password_otpcheck', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(varificaton),
                 })
-                    .then(response => {
+                    .then(async response => {
                         if (response.ok) {
                             alert("Otp verified successfully");
                             navigate('/new-password', { state: { email } }); // Redirect to new password page after successful verification
                         } else {
                             navigate('/forgot-password', { state: { email } }); // Redirect to forgot password page on error
-                            throw new Error('Failed to verify OTP');
+                            const errorData = await response.json();
+                            throw new Error(errorData?.message || 'Incorrect OTP');
                         }
                     })
                     .catch(error => {
@@ -50,7 +50,7 @@ function ForgotPassword() {
         }
         else {
             const user = { Email: email };
-            fetch('https://localhost:7109/api/AuthService/Forgot_Password_mailcheck', {
+            fetch('https://localhost:7294/api/Employee/Forgot_Password_mailcheck', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

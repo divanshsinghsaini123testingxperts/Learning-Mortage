@@ -27,7 +27,7 @@ const NewPass = () => {
             }
 
             const user = { Email: email, Password: password };
-            const response = await fetch('https://localhost:7109/api/AuthService/SetNewPassword', {
+            const response = await fetch('https://localhost:7294/api/Employee/SetNewPassword', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -39,7 +39,8 @@ const NewPass = () => {
                 alert("Password updated successfully!");
                 navigate('/login', { state: { email } });
             } else {
-                throw new Error('Failed to update password');
+                const errorData = await response.json();
+                throw new Error(errorData?.message || 'Failed to update password');
             }
         } catch (error) {
             console.error('Error:', error);

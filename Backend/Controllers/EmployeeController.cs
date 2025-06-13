@@ -63,7 +63,7 @@ namespace Backend.Controllers
         public async Task<IActionResult> Forgot_Password_mailcheck(Emailh e)
         {
             bool user =await _employeeRepository.GetByEmailAsync(e.Email);
-            if (!user) return BadRequest("Email not exists -");
+            if (!user)return BadRequest("Email not exists -");
             // Implement the logic of sending email to user, to that particular mail
             var rand = new Random();
             var otp = rand.Next(100000, 1000000);
@@ -92,6 +92,7 @@ namespace Backend.Controllers
             return Ok("OTP verified");
         }
         [HttpPost("SetNewPassword")]
+        
         public async Task<IActionResult> SetNewPassword(LoginDetailsDTO user)
         {
             bool sucess_update  = await _employeeRepository.SaveNewPasswordAsync(user);

@@ -10,25 +10,36 @@ function Login(){
     const navigate = useNavigate();
    
     const handleLogin = async () => {
+        setError(null); // Clear previous errors
         try {
             const user = { Email: email, Password: password };
-            const response = await fetch('https://localhost:7109/api/AuthService/LoginRequest', {
+            const response = await fetch('https://localhost:7294/api/Employee/LoginRequest', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    // Authorization: `Bearer ${localStorage.getItem("token")}` 
                 },
                 body: JSON.stringify(user),
             });
 
-            if (!response.ok) {
-                throw new Error('Login failed');
+            const text = await response.text();
+            let data = null;
+            try {
+                data = response.headers.get('content-type')?.includes('application/json') ? JSON.parse(text) : { message: text };
+            } catch {
+                data = { message: text };
             }
 
-            const data = await response.json();
-            console.log('Login successful:', data);
-            localStorage.setItem('token', data.token);
-            navigate('/home');
+            if (!response.ok) {
+                setError(data?.message || 'Login failed');
+                return;
+            }
+
+            if (data?.token) {
+                localStorage.setItem('token', data.token);
+                navigate('/home');
+            } else {
+                setError('Invalid response from server.');
+            }
         } catch (error) {
             console.error('Error:', error);
             setError('Login failed. Please check your credentials.');

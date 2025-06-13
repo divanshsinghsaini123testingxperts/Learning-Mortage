@@ -27,8 +27,8 @@ function Register() {
             }
 
             const user = { Id: 0, Name: name, Email: email, Password: password };
-            
-            const response = await fetch('https://localhost:7109/api/AuthService/Register', {
+
+            const response = await fetch('https://localhost:7294/api/Employee/RegisterAsync', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
