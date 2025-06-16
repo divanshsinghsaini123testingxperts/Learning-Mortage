@@ -33,6 +33,7 @@ namespace Backend.Controllers
             }
             var Emp = new Employee
             {
+                Id = user.Id ,
                 Name = user.Name,
                 Email = user.Email,
                 Password = user.Password, // Ensure password is hashed in a real application

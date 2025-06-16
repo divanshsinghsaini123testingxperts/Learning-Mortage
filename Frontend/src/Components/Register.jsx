@@ -26,15 +26,15 @@ function Register() {
                 return;
             }
 
-            const user = { Id: 0, Name: name, Email: email, Password: password };
+            const user = { Id: 0, Name: name, Email: email, Password: password , Role : "Employee"};
 
-            const response = await fetch('https://localhost:7294/api/Employee/RegisterAsync', {
+            const response = await fetch('https://localhost:7294/api/Employee/Register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                credentials: 'include', // Include cookies if your API uses them
+                // credentials: 'include', // Include cookies if your API uses them
                 body: JSON.stringify(user),
             });
 
