@@ -3,11 +3,11 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { Router , createBrowserRouter ,RouterProvider } from 'react-router-dom';
-import  Home  from './Components/Home.jsx'
-import  Login  from './Components/Login.jsx'
-import  Register  from './Components/Register.jsx'
-import ForgotPassword from './Components/ForgotPassword.jsx'
-import NewPass from './Components/NewPass.jsx'
+import  Home  from './Pages/Home/Home.jsx'
+import  Login  from './Pages/Authentication/Login.jsx'
+import  Register  from './Pages/Authentication/Register.jsx'
+import ForgotPassword from './Pages/Authentication/ForgotPassword.js'
+import NewPass from './Pages/Authentication/NewPass.js'
 
 const router = createBrowserRouter([
   {
@@ -30,12 +30,27 @@ const router = createBrowserRouter([
   },
   {
     path: '/home',
-    element: <Home />
+    element: <Home />,
+    children: [
+      {
+        path: 'Customers',
+        element: <Customers />
+      },
+      {
+        path: 'Custom_forms',
+        element: <CustomForms />
+      },
+      {
+        path: 'Create_custom_form',
+        element: <CreateCustomForm />
+      },
+    ],
   },
   {
     path: '/new-password',
     element: <NewPass />
   }
+  
 ]);
 
 

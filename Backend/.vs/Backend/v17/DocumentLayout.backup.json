@@ -3,48 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Controllers\\EmployeeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\EmployeeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\CustomerRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Repositories\\CustomerRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\ICustomerRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Repositories\\Contract\\ICustomerRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\contract\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\contract\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IEmployeeRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Repositories\\Contract\\IEmployeeRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\contract\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\contract\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Services\\EmailService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\EmailService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\EmployeeRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Repositories\\EmployeeRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\GenericRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Repositories\\GenericRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Controllers\\CustomerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\CustomerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IGenericRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Repositories\\Contract\\IGenericRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\contract\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\contract\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Interfaces\\ICustomerService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Interfaces\\ICustomerService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\interfaces\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:interfaces\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -120,7 +120,7 @@
               "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
               "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Controllers\\EmployeeController.cs",
               "RelativeToolTip": "Controllers\\EmployeeController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAgwEUAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-13T12:00:08.753Z",
               "EditorCaption": ""

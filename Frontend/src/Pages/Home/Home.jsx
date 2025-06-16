@@ -13,13 +13,6 @@ function Home() {
     }
   }, []);
  
-  // const checkAuth = () => {
-  //   const token = localStorage.getItem('token');
-  //   if (!token) {
-  //     navigate('/login');
-  //   }
-  // };
-  // checkAuth();
   const handleLogout = () => {
     // Clear the token from localStorage
     localStorage.removeItem('token');

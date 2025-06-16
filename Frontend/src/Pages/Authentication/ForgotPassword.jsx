@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { use } from 'react';
 import { useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 
@@ -7,7 +7,9 @@ function ForgotPassword() {
     const location = useLocation();
     const [sent, setSent] = useState(false);
     const [email, setEmail] = useState(location.state?.email);
+   
     const [otp, setOtp] = useState();
+    
     
     const Checkmail = () => {
         if (!email) {
@@ -35,6 +37,7 @@ function ForgotPassword() {
                     .then(async response => {
                         if (response.ok) {
                             alert("Otp verified successfully");
+                            sessionStorage.setItem('allowNewPass', 'true');
                             navigate('/new-password', { state: { email } }); // Redirect to new password page after successful verification
                         } else {
                             navigate('/forgot-password', { state: { email } }); // Redirect to forgot password page on error

@@ -1,15 +1,23 @@
-import {React , useState}  from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import {React , useEffect, useState}  from 'react';
+import { useNavigate, useLocation  } from 'react-router-dom';
 
 const NewPass = () => {
     const navigate = useNavigate();
-    const location = useLocation();
+   
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [email, setEmail] = useState(location.state?.email || '');
+    const location = useLocation();
+    const { email } = location.state || {};
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    
+    useEffect(() => {
+    const allowed = sessionStorage.getItem('allowNewPass');
+    if (!allowed || !email) {
+        navigate('/forgot-password');
+        sessionStorage.removeItem('allowNewPass');
+    }
+    // ...existing code...
+}, [email]);
     const handlepass = async (e) => {
         e.preventDefault();
         try {
