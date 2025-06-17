@@ -3,11 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { Router , createBrowserRouter ,RouterProvider } from 'react-router-dom';
+import ForgotPassword from './Pages/Authentication/ForgotPassword.jsx'
 import  Home  from './Pages/Home/Home.jsx'
 import  Login  from './Pages/Authentication/Login.jsx'
 import  Register  from './Pages/Authentication/Register.jsx'
-import ForgotPassword from './Pages/Authentication/ForgotPassword.js'
-import NewPass from './Pages/Authentication/NewPass.js'
+import NewPass from './Pages/Authentication/NewPass.jsx'
+import Customers from './Components/Customers/Customers.jsx'
+import CustomForms from './Components/CustomForms/CustomForms.jsx'
+import CreateCustomForm from './Components/CreateCustomForm/CreateCustomForm.jsx'
 
 const router = createBrowserRouter([
   {
@@ -17,32 +20,39 @@ const router = createBrowserRouter([
   },
   {
     path: '/login',
-    element: <Login />
+    element: <Login />,
+    
+    errorElement: <div>Login failed</div>, // Optional error element for login
+
   },
   {
     path: '/register',
     element: <Register />,
-  
+    errorElement: <div>Registration failed</div>, // Optional error element for registration
   },
   {
     path: '/forgot-password',
-    element: <ForgotPassword />
+    element: <ForgotPassword />,
+    errorElement: <div>Forgot password failed</div>, // Optional error element for forgot password
   },
   {
     path: '/home',
     element: <Home />,
     children: [
       {
-        path: 'Customers',
-        element: <Customers />
+        path: '',
+        element: <Customers />,
+        errorElement: <div>Failed to load customers</div>
       },
       {
         path: 'Custom_forms',
-        element: <CustomForms />
+        element: <CustomForms />,
+        errorElement: <div>Failed to load custom forms</div>
       },
       {
         path: 'Create_custom_form',
-        element: <CreateCustomForm />
+        element: <CreateCustomForm />,
+        errorElement: <div>Failed to create custom form</div>
       },
     ],
   },

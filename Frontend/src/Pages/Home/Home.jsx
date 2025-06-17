@@ -1,51 +1,39 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import NavBar from '../../Components/NavBar/NavBar';
+import Sidebar from '../../Components/SideBar/Sidebar';
+import './Home.css';
 
 function Home() {
   const navigate = useNavigate();
-  const [userName, setUserName] = useState('Guest');
-  
-  useEffect(() => {
-    // Check if user is authenticated
-    const token = localStorage.getItem('token');
-    if (!token) {
-      navigate('/login');
-    }
-  }, []);
- 
+
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   if (!token) {
+  //     navigate('/login');
+  //   }
+  // }, [navigate]);
+
   const handleLogout = () => {
-    // Clear the token from localStorage
     localStorage.removeItem('token');
-    // Redirect to login page
     navigate('/login');
   };
 
   return (
-    <div className="home-container">
-      <nav className="home-nav">
-        <h2>Dashboard</h2>
-        <button onClick={handleLogout} className="logout-button">
-          Logout
-        </button>
-      </nav>
+    <div className="home-layout">
+      <header className="home-navbar">
+        <NavBar handleLogout={handleLogout} Email={localStorage.getItem('email') || 'Guest'} />
+      </header>
       <div className="home-content">
-        <h1>Welcome to Your Dashboard</h1>
-        <p>You're successfully logged in!</p>
-        <div className="dashboard-cards">
-          <div className="dashboard-card">
-            <h3>Quick Stats</h3>
-            <p>Your activity overview</p>
-          </div>
-          <div className="dashboard-card">
-            <h3>Recent Activity</h3>
-            <p>Your latest actions</p>
-          </div>
-          <div className="dashboard-card">
-            <h3>Profile</h3>
-            <p>Manage your account</p>
-          </div>
+        
+        <aside className="home-sidebar">
+          <Sidebar />
+        </aside>
+        <div className="home-main">
+          <Outlet />
         </div>
       </div>
+      
     </div>
   );
 }

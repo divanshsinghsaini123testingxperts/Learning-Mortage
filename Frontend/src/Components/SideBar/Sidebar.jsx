@@ -1,21 +1,39 @@
-
-
-
-import { NavLink  , Link} from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import './Sidebar.css';
 
 function Sidebar() {
   return (
-    <>
-     <h2>Dashboard</h2>
-     <ul>
-        <li className="button"><NavLink to="/home/Customers">Customers</NavLink></li>
-        <li className="button"><NavLink to="/home/Custom_forms">Custom Forms</NavLink></li>
-     </ul>
-
-     </>
-  )
+    <aside className="sidebar">
+      <div className="sidebar-header">
+        <h2>Dashboard</h2>
+      </div>
+      <nav className="sidebar-nav">
+        <ul>
+          <li>
+            <NavLink 
+              to="/home" 
+              end
+              className={({ isActive }) => 
+                `nav-link ${isActive ? 'active' : ''}`
+              }
+            >
+              Customers
+            </NavLink>
+          </li>
+          <li>
+            <NavLink 
+              to="/home/Custom_forms"
+              className={({ isActive }) => 
+                `nav-link ${isActive ? 'active' : ''}`
+              }
+            >
+              Custom Forms
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  );
 }
 
-export default Sidebar
-
-
+export default Sidebar;

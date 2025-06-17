@@ -1,18 +1,98 @@
 
 
-import React from 'react'
-
+import {React ,useEffect,useState , useLocation } from 'react'
+import NewQuestion from './NewQuestion/NewQuestion'
 const CreateCustomForm = () => {
-    // what we can dio is store the all question in an array of questions 
-    //because we does't know how many questions till now user has added 
-    // so we can use a state to store the questions and then map through them to display
-    // and then we can add a button to add more questions
+    //fatch the questions from the server or initialize with an empty array
+    // This will hold the questions for the form
+    // Id INT IDENTITY(1,1) PRIMARY KEY,
+    // EngQuestion VARCHAR(MAX),
+    // FrenchQuestion VARCHAR(MAX),
+    // RequiredField BIT,
+    // AnsFormat 
+    // FormID INT,
+    //like i have to create a form with multiple questions, each question will have an id, engQuestion, frQuestion, answerFormat
+    // We can use a state variable to hold the questions array
+    const [questions, setQuestions] = useState([]);
+    useEffect(() => {
+        //ye bhi condition pr depend krta h ki new form create krna h ya existing form ko edit krna h
+        // If we are creating a new form, we can initialize the questions array with an empty array
+        // fetch('https://localhost:7294/api/CustomForm/GetAllQuestions', {
+        //     method: 'GET',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        // }).then(response => {
+        //     if (!response.ok) {
+        //         throw new Error('Network response was not ok');
+        //     }
+        //     return response.json();
+        // }).then(data => {
+        //     setQuestions(data);
+        // }).catch(error => {
+        //     console.error('There was a problem with the fetch operation:', error);
+        // });
+    }, []);
     
+    const handlesubmit = () => {
+        // Here we can handle the form submission
+        // We can send the questions array to the server or do whatever we want with it
+        console.log("Form submitted with questions: ", questions);
+        //call the api to add or update the form 
+    }
+    const [formName, setFormName] = useState('');
+    const [formNameFr, setFormNameFr] = useState('');
+    function UpdateQuestion(id, updatedQuestion) {
+        setQuestions(prevQuestions =>
+            prevQuestions.map((q, idx) => idx === id ? updatedQuestion : q));
+    }
+    const addNewQuestion = () => {
+        const newQuestion = {
+            Id : 0 ,
+            EngQuestion: '',
+            FrenchQuestion: '',
+            RequiredField: false,
+            AnsFormat: 'text'
+        };
+        setQuestions(prevQuestions => [...prevQuestions, newQuestion]);
+        <NewQuestion
+            id={newQuestion.Id}
+            x={questions.length}
+            question={newQuestion}
+            updateQuestion={UpdateQuestion}
+            deleteQuestion={DeleteQuestion}
+        />
+   };
+    const DeleteQuestion =(idx)=>{
+        //remove the item from perticular index
+        setQuestions(prevQuestions => prevQuestions.filter((_, index) => index !== idx));
+    }
   return (
     <>
       <h2>Add Form</h2>
-      <div>Define Form Fields</div>
-      <form></form>
+      <h3>Define Form Fields</h3>
+      <form>
+        <label htmlFor="formName">English Form Name</label>
+        <input type="text" id="formName" name="formName" placeholder="Enter Form Name" onChange={(e)=>setFormName(e.target.value)}/>
+        <label htmlFor="formNameFr">French Form Name</label>
+        <input type="text" id="formNameFr" name="formNameFr" placeholder="Entrez le nom du formulaire"  onChange={(e)=>setFormNameFr(e.target.value)} />
+        {/* Here we can map through the questions array and display them */}
+        {questions.map((q, idx) => (
+                <NewQuestion
+                    key={idx}
+                    id={q.id}
+                    x={idx + 1}
+                    question={q}
+                    updateQuestion={UpdateQuestion}
+                    deleteQuestion={DeleteQuestion}
+                />
+        ))} 
+
+        {/* For now, we will just add a button to add more questions */}
+
+        <button type="button" onClick={addNewQuestion}>Add Question</button>
+      </form>
+      <button type="submit" onClick={handlesubmit}>Submit Form</button>
     </>
   )
 }
