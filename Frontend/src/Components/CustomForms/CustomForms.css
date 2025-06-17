@@ -1,0 +1,80 @@
+.custom-forms-container {
+  padding: 2rem;
+}
+
+.custom-forms-container header {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.custom-forms-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.custom-forms-container a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.custom-forms-container a:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+.form-list {
+  background: var(--surface-color);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.form-list th {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-secondary);
+}
+
+.form-list td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: var(--text-primary);
+}
+
+.form-list tr:last-child td {
+  border-bottom: none;
+}
+
+.form-list button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-list button:first-child {
+  background: var(--primary-color);
+  color: white;
+}
+
+.form-list button:last-child {
+  background: #dc3545;
+  color: white;
+}

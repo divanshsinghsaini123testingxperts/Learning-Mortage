@@ -1,7 +1,6 @@
 import { useEffect } from "react"
 import { Link } from "react-router-dom";
-
-
+import './CustomForms.css';
 
 const CustomForms = () => {
   // useEffect(() => {
@@ -21,24 +20,25 @@ const CustomForms = () => {
   //     console.error('There was a problem with the fetch operation:', error);
   //   });
   // }, [])
-  return (<>
-    <header>Custom Forms</header>
+  return (
     <div className="custom-forms-container">
-      <h3>Form Management</h3>
-      <Link to="/home/Create_custom_form">Add Form</Link>
-    </div>
-    <div className="form-list">
+      <header>Custom Forms</header>
+      <div className="form-management">
+        <h3>Form Management</h3>
+        <Link to="/home/Create_custom_form">Add Form</Link>
+      </div>
+      <div className="form-list">
         <table>
-            <thead>
-              <tr>
-                <th>Form Name</th>
-                <th>Customer Name</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-                {/* {data.map((row) => (
-            <tr key={row.id}>
+          <thead>
+            <tr>
+              <th>Form Name</th>
+              <th>Customer Name</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* {data.map((row) => (
+              <tr key={row.id}>
                 <td>{row.formName}</td>
                 <td>{row.customerName}</td>
                 <td>
@@ -47,12 +47,11 @@ const CustomForms = () => {
                 </td>
               </tr>
             ))} */}
-            </tbody>
+          </tbody>
         </table>
+      </div>
     </div>
-  </>
-  )
+  );
 }
-
 
 export default CustomForms;

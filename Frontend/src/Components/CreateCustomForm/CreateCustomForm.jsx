@@ -1,7 +1,7 @@
-
-
 import {React ,useEffect,useState , useLocation } from 'react'
 import NewQuestion from './NewQuestion/NewQuestion'
+import './CreateCustomForm.css';
+
 const CreateCustomForm = () => {
     //fatch the questions from the server or initialize with an empty array
     // This will hold the questions for the form
@@ -55,45 +55,43 @@ const CreateCustomForm = () => {
             AnsFormat: 'text'
         };
         setQuestions(prevQuestions => [...prevQuestions, newQuestion]);
-        <NewQuestion
-            id={newQuestion.Id}
-            x={questions.length}
-            question={newQuestion}
-            updateQuestion={UpdateQuestion}
-            deleteQuestion={DeleteQuestion}
-        />
-   };
+    };
     const DeleteQuestion =(idx)=>{
         //remove the item from perticular index
         setQuestions(prevQuestions => prevQuestions.filter((_, index) => index !== idx));
     }
   return (
-    <>
+    <div className="create-form-container">
       <h2>Add Form</h2>
       <h3>Define Form Fields</h3>
       <form>
-        <label htmlFor="formName">English Form Name</label>
-        <input type="text" id="formName" name="formName" placeholder="Enter Form Name" onChange={(e)=>setFormName(e.target.value)}/>
-        <label htmlFor="formNameFr">French Form Name</label>
-        <input type="text" id="formNameFr" name="formNameFr" placeholder="Entrez le nom du formulaire"  onChange={(e)=>setFormNameFr(e.target.value)} />
+        <div className="input-group">
+          <label htmlFor="formName">English Form Name</label>
+          <input type="text" id="formName" name="formName" placeholder="Enter Form Name" onChange={(e)=>setFormName(e.target.value)}/>
+        </div>
+        <div className="input-group">
+          <label htmlFor="formNameFr">French Form Name</label>
+          <input type="text" id="formNameFr" name="formNameFr" placeholder="Entrez le nom du formulaire"  onChange={(e)=>setFormNameFr(e.target.value)} />
+        </div>
+
         {/* Here we can map through the questions array and display them */}
         {questions.map((q, idx) => (
                 <NewQuestion
                     key={idx}
-                    id={q.id}
+                    id={idx}
                     x={idx + 1}
                     question={q}
                     updateQuestion={UpdateQuestion}
-                    deleteQuestion={DeleteQuestion}
+                    deleteQuestion={() => DeleteQuestion(idx)}
                 />
         ))} 
 
         {/* For now, we will just add a button to add more questions */}
 
         <button type="button" onClick={addNewQuestion}>Add Question</button>
+        <button type="submit" onClick={handlesubmit}>Submit Form</button>
       </form>
-      <button type="submit" onClick={handlesubmit}>Submit Form</button>
-    </>
+    </div>
   )
 }
 

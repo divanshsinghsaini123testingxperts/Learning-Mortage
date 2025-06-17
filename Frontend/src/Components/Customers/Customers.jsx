@@ -1,10 +1,5 @@
-
-
-
-
-
 import  { useEffect , useState} from 'react'
-
+import './Customers.css';
 const Customers = () => {
      const handleDelete= (id) =>{
         // pending implementation of delete logic here 
@@ -28,31 +23,40 @@ const Customers = () => {
   //  }, []);
   return (
     <>
-        <table>
-            <thead>
-              <tr>
-                <th>Customer ID</th>
-                <th>Customer Name</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>Actions</th>
+      <div className="customers-container">
+        <div className="customers-header">
+          <h2 className="customers-title">Customers</h2>
+          <button className="action-button add-customer">Add Customer</button>
+        </div>
+        {/* <div className="search-container">
+          <input className="search-input" type="text" placeholder="Search customers..." />
+        </div> */}
+        <table className="customers-table">
+          <thead>
+            <tr>
+              <th>Customer ID</th>
+              <th>Customer Name</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* {data.map((row) => (
+              <tr key={row.Id}>
+                <td>{row.Id}</td>
+                <td>{row.Name}</td>
+                <td>{row.Email}</td>
+                <td>{row.Address}</td>
+                <td>
+                  <button >Edit</button> 
+                  <button onClick={() => handleDelete(row.Id)}>Delete</button>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {/* {data.map((row) => (
-                <tr key={row.Id}>
-                  <td>{row.Id}</td>
-                  <td>{row.Name}</td>
-                  <td>{row.Email}</td>
-                  <td>{row.Address}</td>
-                  <td>
-                    <button >Edit</button> 
-                    <button onClick={() => handleDelete(row.Id)}>Delete</button>
-                  </td>
-                </tr>
-              ))} */}
-            </tbody>
+            ))} */}
+          </tbody>
         </table>
+      </div>
     </>
   )
 }
