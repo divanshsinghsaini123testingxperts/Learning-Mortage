@@ -5,6 +5,7 @@ using Backend.Models.Entity;
 using Backend.Repositories;
 using Backend.Repositories.Contract;
 using Backend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.AccessControl;
 using System.Threading.Tasks;
@@ -103,6 +104,17 @@ namespace Backend.Controllers
             }
             return Ok("sucessFUll Update");
 
+        }
+
+        [HttpPost("GetId")]
+        [Authorize]
+        public async Task<IActionResult> GetIdbyEmailId([FromBody] string Email)
+        {
+            Console.WriteLine("beeeeeeeeeeeeehhhhhehehheh");
+
+            int id =  await _employeeRepository.GetIdByEmail(Email);
+            Console.WriteLine("hehehheh");
+            return Ok(id);
         }
 
     }

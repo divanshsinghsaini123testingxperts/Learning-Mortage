@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     errorElement: <div>Forgot password failed</div>, // Optional error element for forgot password
   },
   {
-    path: '/home',
+    path: '/home/:Id',
     element: <Home />,
     children: [
       {
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         errorElement: <div>Failed to add customer</div>
       },
       {
-        path: 'Edit_customer',
+        path: 'Edit_customer/:customerId',
         element: <EditCustomer />,
         errorElement: <div>Failed to edit customer</div>
       }

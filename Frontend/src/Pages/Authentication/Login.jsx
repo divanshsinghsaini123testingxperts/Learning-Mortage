@@ -35,8 +35,27 @@ function Login(){
             }
 
             if (data?.token) {
-                localStorage.setItem('token', data.token);
-                navigate('/home');
+                localStorage.setItem('token', data.token);                
+                const empResponse = await fetch('https://localhost:7294/api/Employee/GetId', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${data.token}`
+                    },
+                    body: JSON.stringify(email) // Send email as a plain string
+                });
+
+                if (!empResponse.ok) {
+                    setError('Failed to retrieve employee ID');
+                    return;
+                }
+
+                const empId = await empResponse.json();
+                if (typeof empId === 'number') {
+                    navigate(`/home/${empId}`);
+                } else {
+                    setError('Invalid employee ID received');
+                }
             } else {
                 setError('Invalid response from server.');
             }
@@ -53,6 +72,7 @@ function Login(){
                 {error && <p className="error-message">{error}</p>}
                 <div className="form-group">
                     <input 
+                        name='email'
                         type="email" 
                         placeholder="Email" 
                         value={email} 
@@ -62,6 +82,7 @@ function Login(){
                 </div>
                 <div className="form-group">
                     <input 
+                        name='password'
                         type="password" 
                         placeholder="Password" 
                         value={password} 

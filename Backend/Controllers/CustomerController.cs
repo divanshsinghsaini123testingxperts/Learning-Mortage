@@ -69,10 +69,11 @@ namespace Backend.Controllers
             return Ok("Customer added successfully.");
         }
         // update a customer by customer id 
-        [HttpPut("{customerId}")]
+        
+        [HttpPut("UpdateCustomer{customerId}")]
         public async Task<IActionResult> UpdateCustomer(int customerId, [FromBody] Customer customer)
         {
-
+            Console.WriteLine("updated called ------");
             if (customerId != customer.Id)
             {
 
@@ -89,6 +90,12 @@ namespace Backend.Controllers
             }
             await _customerRepository.SaveChangesAsync();
             return Ok("Customer updated successfully.");
+        }
+        [HttpGet("GetCustomerByID{customerId}")]
+        public async Task<IActionResult> GetCustomerByID(int customerId)
+        {
+            var customer = await _customerRepository.GetByIdAsync(customerId);
+            return Ok(customer);
         }
 
     }

@@ -11,15 +11,15 @@
 
 .customers-title {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--text-color);
   font-weight: 600;
 }
 
 .customers-table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: var(--surface-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -28,22 +28,29 @@
 .customers-table td {
   padding: 1rem;
   text-align: left;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
 }
 
 .customers-table th {
-  background: #f8f9fa;
+  background: var(--surface-color);
   font-weight: 600;
-  color: #444;
+  color: var(--text-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .customers-table tr:hover {
-  background-color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 0.05);
   transition: background-color 0.2s;
 }
 
 .customers-table tr:last-child td {
   border-bottom: none;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .action-button {
@@ -53,6 +60,7 @@
   cursor: pointer;
   font-weight: 500;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .add-customer {

@@ -2,6 +2,7 @@ using Backend.Models;
 using Backend.Models.Entity;
 using Backend.Repositories.Contract;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Backend.Repositories
 {
@@ -32,6 +33,11 @@ namespace Backend.Repositories
             employee.Password = User.Password; // Ensure password is hashed in a real application
             _context.Entry(employee).State = EntityState.Modified;
             return true;
+        }
+        public async Task<int> GetIdByEmail(string email)
+        {
+            var emp =  await _dbSet.SingleOrDefaultAsync(u => u.Email == email);
+            return emp.Id;
         }
     }
 }

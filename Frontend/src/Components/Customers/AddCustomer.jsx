@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import './Customers.css';
-
+import { useParams } from 'react-router-dom';
 
 const AddCustomer = () => {
+    const { Id } = useParams(); // Assuming you want to use addId for some logic
     const [formData, setFormData] = useState({
         Name: '',
         Email: '',
-        Address: ''
+        Address: '',
+        EmpId: Id // Assuming you want to set EmpId from the URL parameter
     });
 
     const handleChange = (e) => {
@@ -23,6 +25,24 @@ const AddCustomer = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission logic here
+        fetch(`https://localhost:7294/api/Customer/AddCustomer/${Id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();  // <-- read text response
+        })
+        .then(data => {
+            console.log('Server response:', data);  // <-- will print "added successfully"
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
     };
 
     return (

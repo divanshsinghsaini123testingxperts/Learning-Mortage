@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate , useParams} from 'react-router-dom';
 import { useEffect } from 'react';
 import NavBar from '../../Components/NavBar/NavBar';
 import Sidebar from '../../Components/SideBar/Sidebar';
@@ -6,13 +6,14 @@ import './Home.css';
 
 function Home() {
   const navigate = useNavigate();
+  const { Id } = useParams();
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   if (!token) {
-  //     navigate('/login');
-  //   }
-  // }, [navigate]);
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/login');
+    }
+  }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');

@@ -17,27 +17,6 @@
   },
   {
     "ContainingType": "Backend.Controllers.CustomerController",
-    "Method": "UpdateCustomer",
-    "RelativePath": "api/Customer/{customerId}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "customerId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "customer",
-        "Type": "Backend.Models.Customer",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Backend.Controllers.CustomerController",
     "Method": "AddCustomer",
     "RelativePath": "api/Customer/{EmployeeId}",
     "HttpMethod": "POST",
@@ -74,6 +53,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Backend.Controllers.CustomerController",
+    "Method": "GetCustomerByID",
+    "RelativePath": "api/Customer/GetCustomerByID{customerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.CustomerController",
+    "Method": "UpdateCustomer",
+    "RelativePath": "api/Customer/UpdateCustomer{customerId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "customer",
+        "Type": "Backend.Models.Customer",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Backend.Controllers.EmployeeController",
     "Method": "Forgot_Password_mailcheck",
     "RelativePath": "api/Employee/Forgot_Password_mailcheck",
@@ -100,6 +116,22 @@
       {
         "Name": "temp",
         "Type": "Backend.Models.Entity.mailotp",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.EmployeeController",
+    "Method": "GetIdbyEmailId",
+    "RelativePath": "api/Employee/GetId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Email",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
