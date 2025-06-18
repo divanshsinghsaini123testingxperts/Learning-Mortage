@@ -32,7 +32,7 @@ const CustomForms = () => {
           <thead>
             <tr>
               <th>Form Name</th>
-              <th>Customer Name</th>
+              
               <th>Actions</th>
             </tr>
           </thead>
@@ -40,7 +40,7 @@ const CustomForms = () => {
             {/* {data.map((row) => (
               <tr key={row.id}>
                 <td>{row.formName}</td>
-                <td>{row.customerName}</td>
+                
                 <td>
                   <button>Edit</button>
                   <button>Delete</button>

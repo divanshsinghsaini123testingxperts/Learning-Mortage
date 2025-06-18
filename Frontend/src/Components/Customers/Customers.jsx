@@ -1,5 +1,6 @@
 import  { useEffect , useState} from 'react'
 import './Customers.css';
+import { Link } from 'react-router-dom';
 const Customers = () => {
      const handleDelete= (id) =>{
         // pending implementation of delete logic here 
@@ -26,7 +27,7 @@ const Customers = () => {
       <div className="customers-container">
         <div className="customers-header">
           <h2 className="customers-title">Customers</h2>
-          <button className="action-button add-customer">Add Customer</button>
+          <Link to="/home/Add_customer" className="action-button add-customer">Add Customer</Link>
         </div>
         {/* <div className="search-container">
           <input className="search-input" type="text" placeholder="Search customers..." />

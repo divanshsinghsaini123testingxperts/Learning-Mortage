@@ -1,5 +1,5 @@
 import {React ,useEffect,useState , useLocation } from 'react'
-import NewQuestion from './NewQuestion/NewQuestion'
+import NewQuestion from '../NewQuestion/NewQuestion'
 import './CreateCustomForm.css';
 
 const CreateCustomForm = () => {

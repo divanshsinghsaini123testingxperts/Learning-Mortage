@@ -11,7 +11,8 @@ import NewPass from './Pages/Authentication/NewPass.jsx'
 import Customers from './Components/Customers/Customers.jsx'
 import CustomForms from './Components/CustomForms/CustomForms.jsx'
 import CreateCustomForm from './Components/CreateCustomForm/CreateCustomForm.jsx'
-
+import AddCustomer from './Components/Customers/AddCustomer.jsx'
+import EditCustomer from './Components/Customers/EditCustomer.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -54,6 +55,16 @@ const router = createBrowserRouter([
         element: <CreateCustomForm />,
         errorElement: <div>Failed to create custom form</div>
       },
+      {
+        path: 'Add_customer',
+        element: <AddCustomer />,
+        errorElement: <div>Failed to add customer</div>
+      },
+      {
+        path: 'Edit_customer',
+        element: <EditCustomer />,
+        errorElement: <div>Failed to edit customer</div>
+      }
     ],
   },
   {

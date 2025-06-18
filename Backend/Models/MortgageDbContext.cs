@@ -5,29 +5,51 @@ using System.Collections.Generic;
 
 namespace Backend.Models;
 
-public partial class MyDbContext : DbContext
+public partial class MortgageDbContext : DbContext
 {
-    public MyDbContext()
+    public MortgageDbContext()
     {
     }
 
-    public MyDbContext(DbContextOptions<MyDbContext> options)
+    public MortgageDbContext(DbContextOptions<MortgageDbContext> options)
         : base(options)
     {
     }
+
+    public virtual DbSet<CustomForm> CustomForms { get; set; }
 
     public virtual DbSet<Customer> Customers { get; set; }
 
     public virtual DbSet<Employee> Employees { get; set; }
 
+    public virtual DbSet<Question> Questions { get; set; }
+    public virtual DbSet<GetEmployeeDTO> GetEmployeeDTO { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Server=TXCHD-PC-016\\SQLEXPRESS;Database=MortgageDB;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<CustomForm>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__CustomFo__3214EC0709822DCE");
+
+            entity.Property(e => e.AdminId).HasColumnName("AdminID");
+            entity.Property(e => e.EngFormName)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.FrenchFormName)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.Admin).WithMany(p => p.CustomForms)
+                .HasForeignKey(d => d.AdminId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK__CustomFor__Admin__2645B050");
+        });
+
         modelBuilder.Entity<Customer>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Customer__3214EC07C24DDE46");
+            entity.HasKey(e => e.Id).HasName("PK__Customer__3214EC07162596DC");
 
             entity.Property(e => e.Address)
                 .HasMaxLength(100)
@@ -42,7 +64,7 @@ public partial class MyDbContext : DbContext
             entity.HasOne(d => d.Emp).WithMany(p => p.Customers)
                 .HasForeignKey(d => d.EmpId)
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK__Customers__EmpId__06CD04F7");
+                .HasConstraintName("FK__Customers__EmpId__09A971A2");
         });
 
         modelBuilder.Entity<Employee>(entity =>
@@ -65,9 +87,22 @@ public partial class MyDbContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<Question>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Question__3214EC075E928694");
+
+            entity.Property(e => e.EngQuestion).IsUnicode(false);
+            entity.Property(e => e.FormId).HasColumnName("FormID");
+            entity.Property(e => e.FrenchQuestion).IsUnicode(false);
+
+            entity.HasOne(d => d.Form).WithMany(p => p.Questions)
+                .HasForeignKey(d => d.FormId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK__Questions__FormI__29221CFB");
+        });
+
         OnModelCreatingPartial(modelBuilder);
     }
-    public DbSet<GetEmployeeDTO> GetEmployeeDTO { get; set; } // This is only used for mapping, not real table
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

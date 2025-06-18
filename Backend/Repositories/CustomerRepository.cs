@@ -7,7 +7,7 @@ namespace Backend.Repositories
 {
     public class CustomerRepository : GenericRepository<Customer>, ICustomerRepository
     {
-        public CustomerRepository(MyDbContext context) : base(context)
+        public CustomerRepository(MortgageDbContext context) : base(context)
         {
         }
 

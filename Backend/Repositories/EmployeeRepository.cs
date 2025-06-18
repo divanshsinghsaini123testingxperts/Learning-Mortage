@@ -7,7 +7,7 @@ namespace Backend.Repositories
 {
     public class EmployeeRepository : GenericRepository<Employee>, IEmployeeRepository
     {
-        public EmployeeRepository(MyDbContext context) : base(context)
+        public EmployeeRepository(MortgageDbContext context) : base(context)
         {
         }
 

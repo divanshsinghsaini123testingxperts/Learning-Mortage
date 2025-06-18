@@ -46,10 +46,11 @@ builder.Services.AddSingleton<ITokenService, TokenService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 // Database connection
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<MyDbContext>(options =>
+builder.Services.AddDbContext<MortgageDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 // Configure CORS

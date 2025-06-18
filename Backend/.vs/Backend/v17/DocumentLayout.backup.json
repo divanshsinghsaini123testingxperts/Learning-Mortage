@@ -3,44 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\contract\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\contract\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\contract\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\contract\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\models\\entity\\getemployeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:models\\entity\\getemployeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\contract\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\contract\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\interfaces\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:interfaces\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\models\\mortgagedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:models\\mortgagedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -77,137 +53,73 @@
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CustomerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\CustomerRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\CustomerRepository.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\CustomerRepository.cs",
-              "RelativeToolTip": "Repositories\\CustomerRepository.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T13:01:54.937Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ICustomerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\ICustomerRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Contract\\ICustomerRepository.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\ICustomerRepository.cs",
-              "RelativeToolTip": "Repositories\\Contract\\ICustomerRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T13:00:21.337Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IEmployeeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IEmployeeRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Contract\\IEmployeeRepository.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IEmployeeRepository.cs",
-              "RelativeToolTip": "Repositories\\Contract\\IEmployeeRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T12:50:31.124Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EmployeeController.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Controllers\\EmployeeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Controllers\\EmployeeController.cs",
-              "RelativeToolTip": "Controllers\\EmployeeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T12:00:08.753Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "EmailService.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Services\\EmailService.cs",
-              "RelativeDocumentMoniker": "Services\\EmailService.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Services\\EmailService.cs",
-              "RelativeToolTip": "Services\\EmailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T12:53:37.732Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EmployeeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\EmployeeRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\EmployeeRepository.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\EmployeeRepository.cs",
-              "RelativeToolTip": "Repositories\\EmployeeRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T12:50:41.88Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\GenericRepository.cs",
-              "RelativeToolTip": "Repositories\\GenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T10:52:42.633Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "Controllers\\CustomerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T09:25:14.086Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IGenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IGenericRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Contract\\IGenericRepository.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IGenericRepository.cs",
-              "RelativeToolTip": "Repositories\\Contract\\IGenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T10:52:54.552Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ICustomerService.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Interfaces\\ICustomerService.cs",
-              "RelativeDocumentMoniker": "Interfaces\\ICustomerService.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Interfaces\\ICustomerService.cs",
-              "RelativeToolTip": "Interfaces\\ICustomerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T11:14:18.002Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAwwDAAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T12:52:54.96Z"
+              "WhenOpened": "2025-06-18T07:14:06.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MortgageDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\MortgageDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\MortgageDbContext.cs",
+              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\MortgageDbContext.cs",
+              "RelativeToolTip": "Models\\MortgageDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T07:10:31.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetEmployeeDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\Entity\\GetEmployeeDTO.cs",
+              "RelativeDocumentMoniker": "Models\\Entity\\GetEmployeeDTO.cs",
+              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\Entity\\GetEmployeeDTO.cs",
+              "RelativeToolTip": "Models\\Entity\\GetEmployeeDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T07:09:39.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\EmployeeRepository.cs",
+              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\EmployeeRepository.cs",
+              "RelativeToolTip": "Repositories\\EmployeeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T07:08:05.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\CustomerRepository.cs",
+              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\CustomerRepository.cs",
+              "RelativeToolTip": "Repositories\\CustomerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T13:01:54.937Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -291,6 +291,39 @@
   },
   "components": {
     "schemas": {
+      "CustomForm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "engFormName": {
+            "type": "string",
+            "nullable": true
+          },
+          "frenchFormName": {
+            "type": "string",
+            "nullable": true
+          },
+          "adminId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "admin": {
+            "$ref": "#/components/schemas/Employee"
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Question"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Customer": {
         "type": "object",
         "properties": {
@@ -354,6 +387,13 @@
             "type": "string",
             "nullable": true
           },
+          "customForms": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomForm"
+            },
+            "nullable": true
+          },
           "customers": {
             "type": "array",
             "items": {
@@ -374,6 +414,36 @@
           "password": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Question": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "engQuestion": {
+            "type": "string",
+            "nullable": true
+          },
+          "frenchQuestion": {
+            "type": "string",
+            "nullable": true
+          },
+          "requiredField": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "formId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "form": {
+            "$ref": "#/components/schemas/CustomForm"
           }
         },
         "additionalProperties": false

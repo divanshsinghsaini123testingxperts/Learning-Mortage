@@ -7,10 +7,10 @@ namespace Backend.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        protected readonly MyDbContext _context;
+        protected readonly MortgageDbContext _context;
         protected readonly DbSet<T> _dbSet;
 
-        public GenericRepository(MyDbContext context)
+        public GenericRepository(MortgageDbContext context)
         {
             _context = context;
             _dbSet = context.Set<T>();

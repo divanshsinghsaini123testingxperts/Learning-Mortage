@@ -15,5 +15,7 @@ public partial class Employee
 
     public string? Role { get; set; }
 
+    public virtual ICollection<CustomForm> CustomForms { get; set; } = new List<CustomForm>();
+
     public virtual ICollection<Customer> Customers { get; set; } = new List<Customer>();
 }
