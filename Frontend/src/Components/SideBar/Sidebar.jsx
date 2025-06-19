@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 import './Sidebar.css';
-
+import { useParams } from "react-router-dom";
 function Sidebar() {
+  const { Id } = useParams();
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
@@ -10,8 +11,8 @@ function Sidebar() {
       <nav className="sidebar-nav">
         <ul>
           <li>
-            <NavLink 
-              to="/home" 
+            <NavLink
+              to={`/home/${Id}`}
               end
               className={({ isActive }) => 
                 `nav-link ${isActive ? 'active' : ''}`
@@ -21,8 +22,8 @@ function Sidebar() {
             </NavLink>
           </li>
           <li>
-            <NavLink 
-              to="/home/Custom_forms"
+            <NavLink
+              to={`/home/${Id}/Custom_forms`}
               className={({ isActive }) => 
                 `nav-link ${isActive ? 'active' : ''}`
               }

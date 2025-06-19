@@ -47,6 +47,8 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<ICustomFormsRepository, CustomFormsRepository>();
+builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 
 // Database connection
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

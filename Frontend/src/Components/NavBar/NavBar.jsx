@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import './NavBar.css'; // Assuming you have a CSS file for styling
-
+import { useParams } from 'react-router-dom';
 function NavBar({ email = '', handleLogout }) {
     const [scrolled, setScrolled] = useState(false);
-
+    const { Id } = useParams();
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 10);
@@ -25,7 +25,7 @@ function NavBar({ email = '', handleLogout }) {
                         <li className="nav-item">
                             <button 
                                 className="nav-link" 
-                                onClick={() => window.location.href = '/home'}
+                                onClick={() => window.location.href = `/home/${Id}`}
                             >
                                 Home
                             </button>

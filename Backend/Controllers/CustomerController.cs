@@ -24,6 +24,7 @@ namespace Backend.Controllers
         }
 
         // Create a function to get all the customers to a particular employee using a stored procedure
+
         [HttpGet("by-employee/{employeeId}")]
         public async Task<IActionResult> GetCustomersByEmployeeId(int employeeId)
         {
@@ -46,10 +47,12 @@ namespace Backend.Controllers
            
         }
         // Add a new customer to perticular employee id using a stored procedure 
-        [HttpPost("{EmployeeId}")]
-        public async Task<IActionResult> AddCustomer(int EmployeeId, [FromBody] Customer customer)
+        [HttpPost("AddCustomer")]
+        public async Task<IActionResult> AddCustomer([FromBody] Customer customer)
         {
 
+            Console.WriteLine("not reachewd hhhhhhhhhhhhhhhh");
+            int EmployeeId = (int)customer.EmpId;
             bool Isemployee = await _employeeRepository.ExistsAsync(EmployeeId);
 
             //check the user already exists or not 
@@ -70,7 +73,7 @@ namespace Backend.Controllers
         }
         // update a customer by customer id 
         
-        [HttpPut("UpdateCustomer{customerId}")]
+        [HttpPut("{customerId}")]
         public async Task<IActionResult> UpdateCustomer(int customerId, [FromBody] Customer customer)
         {
             Console.WriteLine("updated called ------");

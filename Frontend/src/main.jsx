@@ -10,7 +10,7 @@ import  Register  from './Pages/Authentication/Register.jsx'
 import NewPass from './Pages/Authentication/NewPass.jsx'
 import Customers from './Components/Customers/Customers.jsx'
 import CustomForms from './Components/CustomForms/CustomForms.jsx'
-import CreateCustomForm from './Components/CreateCustomForm/CreateCustomForm.jsx'
+import CreateCustomForm from './Components/ActionCustomForm/CreateCustomForm.jsx'
 import AddCustomer from './Components/Customers/AddCustomer.jsx'
 import EditCustomer from './Components/Customers/EditCustomer.jsx'
 const router = createBrowserRouter([

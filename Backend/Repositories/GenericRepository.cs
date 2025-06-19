@@ -39,7 +39,19 @@ namespace Backend.Repositories
         {
             try
             {
+                var keyProperty = typeof(T).GetProperty("Id");
+                if (keyProperty != null)
+                {
+                    var id = keyProperty.GetValue(entity);
+                    var trackedEntity = _context.ChangeTracker.Entries<T>()
+                        .FirstOrDefault(e => keyProperty.GetValue(e.Entity).Equals(id));
+                    if (trackedEntity != null)
+                    {
+                        trackedEntity.State = EntityState.Detached;
+                    }
+                }
                 _dbSet.Update(entity);
+                Console.WriteLine("Updated successfully----");
             }
             catch (Exception)
             {

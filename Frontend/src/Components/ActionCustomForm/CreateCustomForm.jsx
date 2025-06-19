@@ -1,18 +1,9 @@
 import {React ,useEffect,useState , useLocation } from 'react'
 import NewQuestion from '../NewQuestion/NewQuestion'
-import './CreateCustomForm.css';
+import './ActionCustomForm.css';
 
 const CreateCustomForm = () => {
-    //fatch the questions from the server or initialize with an empty array
-    // This will hold the questions for the form
-    // Id INT IDENTITY(1,1) PRIMARY KEY,
-    // EngQuestion VARCHAR(MAX),
-    // FrenchQuestion VARCHAR(MAX),
-    // RequiredField BIT,
-    // AnsFormat 
-    // FormID INT,
-    //like i have to create a form with multiple questions, each question will have an id, engQuestion, frQuestion, answerFormat
-    // We can use a state variable to hold the questions array
+
     const [questions, setQuestions] = useState([]);
     useEffect(() => {
         //ye bhi condition pr depend krta h ki new form create krna h ya existing form ko edit krna h
@@ -73,7 +64,6 @@ const CreateCustomForm = () => {
           <label htmlFor="formNameFr">French Form Name</label>
           <input type="text" id="formNameFr" name="formNameFr" placeholder="Entrez le nom du formulaire"  onChange={(e)=>setFormNameFr(e.target.value)} />
         </div>
-
         {/* Here we can map through the questions array and display them */}
         {questions.map((q, idx) => (
                 <NewQuestion

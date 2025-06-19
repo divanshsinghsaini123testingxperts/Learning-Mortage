@@ -17,17 +17,33 @@
   },
   {
     "ContainingType": "Backend.Controllers.CustomerController",
-    "Method": "AddCustomer",
-    "RelativePath": "api/Customer/{EmployeeId}",
-    "HttpMethod": "POST",
+    "Method": "UpdateCustomer",
+    "RelativePath": "api/Customer/{customerId}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "EmployeeId",
+        "Name": "customerId",
         "Type": "System.Int32",
         "IsRequired": true
       },
+      {
+        "Name": "customer",
+        "Type": "Backend.Models.Customer",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.CustomerController",
+    "Method": "AddCustomer",
+    "RelativePath": "api/Customer/AddCustomer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
         "Name": "customer",
         "Type": "Backend.Models.Customer",
@@ -69,21 +85,164 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Backend.Controllers.CustomerController",
-    "Method": "UpdateCustomer",
-    "RelativePath": "api/Customer/UpdateCustomer{customerId}",
+    "ContainingType": "Backend.Controllers.CustomFormsController",
+    "Method": "GetFormsByEmployeeId",
+    "RelativePath": "api/CustomForms/{employeeId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employeeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.CustomFormsController",
+    "Method": "DeleteForm",
+    "RelativePath": "api/CustomForms/{formId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "formId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.CustomFormsController",
+    "Method": "AddForm",
+    "RelativePath": "api/CustomForms/AddForm/{employeeId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employeeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "form",
+        "Type": "Backend.Models.CustomForm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.CustomFormsController",
+    "Method": "AddQuestion",
+    "RelativePath": "api/CustomForms/AddQuestion/{formId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "formId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "question",
+        "Type": "Backend.Models.Question",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.CustomFormsController",
+    "Method": "DeleteQuestion",
+    "RelativePath": "api/CustomForms/DeleteQuestion/{questionId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "questionId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.CustomFormsController",
+    "Method": "GetFormById",
+    "RelativePath": "api/CustomForms/GetFormById/{formId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "formId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.CustomFormsController",
+    "Method": "GetQuestionsByFormId",
+    "RelativePath": "api/CustomForms/GetQuestionsByFormId/{formId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "formId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.CustomFormsController",
+    "Method": "UpdateForm",
+    "RelativePath": "api/CustomForms/UpdateForm/{formId}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "customerId",
+        "Name": "formId",
         "Type": "System.Int32",
         "IsRequired": true
       },
       {
-        "Name": "customer",
-        "Type": "Backend.Models.Customer",
+        "Name": "form",
+        "Type": "Backend.Models.CustomForm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.CustomFormsController",
+    "Method": "UpdateQuestion",
+    "RelativePath": "api/CustomForms/UpdateQuestion/{questionId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "questionId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "question",
+        "Type": "Backend.Models.Question",
         "IsRequired": true
       }
     ],

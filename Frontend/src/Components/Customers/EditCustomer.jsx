@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './Customers.css';
 
-const EditCustomer = (props) => {
+const EditCustomer = (props) => {    
     const { customerId } = useParams();
+    const navigate = useNavigate();
     const [customerData, setCustomerData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -41,7 +42,7 @@ const EditCustomer = (props) => {
         name: formData.get('name'),
         email: formData.get('email'),
         address: formData.get('address'),
-        EmpId: customerData?.empId
+        EmpId: customerData.empId
       };
 
       try {
@@ -52,14 +53,19 @@ const EditCustomer = (props) => {
           },
           body: JSON.stringify(updatedCustomer),
         });
-
+        console.log(await response.text());
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
+        console.log('Customer updated successfully');
+        // Navigate with success message in state
+        navigate(`/home/${customerData.empId}`, {
+          state: { 
+            message: 'Customer updated successfully',
+            type: 'success'
+          }
+        });
 
-        const result = await response.json();
-        console.log('Customer updated successfully:', result);
-        // TODO: Add success message and navigation
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
         setError(error.message);

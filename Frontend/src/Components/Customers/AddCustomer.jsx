@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import './Customers.css';
-import { useParams } from 'react-router-dom';
+import { useParams  , useNavigate} from 'react-router-dom';
 
 const AddCustomer = () => {
+    const navigate = useNavigate();
     const { Id } = useParams(); // Assuming you want to use addId for some logic
     const [formData, setFormData] = useState({
+       
         Name: '',
         Email: '',
         Address: '',
-        EmpId: Id // Assuming you want to set EmpId from the URL parameter
+        EmpId: parseInt(Id , 10) 
     });
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevData => ({
@@ -18,14 +19,15 @@ const AddCustomer = () => {
             [name]: value
         }));
     };
+
     const onCancel = () => {
-        // Logic to handle cancel action, e.g., navigate back or reset form
-        window.history.back(); // This will take the user back to the previous page
-    }
+        navigate(-1); // Go back
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission logic here
-        fetch(`https://localhost:7294/api/Customer/AddCustomer/${Id}`, {
+        fetch('https://localhost:7294/api/Customer/AddCustomer', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -33,12 +35,14 @@ const AddCustomer = () => {
             body: JSON.stringify(formData),
         }).then(response => {
             if (!response.ok) {
+                console.log("ssss");
                 throw new Error('Network response was not ok');
             }
             return response.text();  // <-- read text response
         })
         .then(data => {
             console.log('Server response:', data);  // <-- will print "added successfully"
+            navigate(`/home/${Id}`); // Navigate to the Customers page after successful addition
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);

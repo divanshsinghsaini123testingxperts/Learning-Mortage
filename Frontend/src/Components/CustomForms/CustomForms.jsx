@@ -1,8 +1,9 @@
 import { useEffect } from "react"
-import { Link } from "react-router-dom";
+import { Link , useParams } from "react-router-dom";
 import './CustomForms.css';
 
 const CustomForms = () => {
+  const { Id } = useParams();
   // useEffect(() => {
   //   const data = fetch('https://localhost:7294/api/CustomForm/GetAllForms', {
   //     method: 'GET',
@@ -25,7 +26,7 @@ const CustomForms = () => {
       <header>Custom Forms</header>
       <div className="form-management">
         <h3>Form Management</h3>
-        <Link to="/home/Create_custom_form">Add Form</Link>
+        <Link to={`/home/${Id}/Create_custom_form`}>Add Form</Link>
       </div>
       <div className="form-list">
         <table>
