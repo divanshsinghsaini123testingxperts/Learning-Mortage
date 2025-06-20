@@ -32,8 +32,8 @@ const NewQuestion = (props) => {
                         type="text"
                         id="FrQuestion"
                         name="FrenchQuestion"
-                        value={question.frQuestion}
-                        onChange={(e) => handleChange('frQuestion', e.target.value)}
+                        value={question.FrenchQuestion}
+                        onChange={(e) => handleChange('FrenchQuestion', e.target.value)}
                         placeholder="Entrez la question en français"
                     />
                 </div>
@@ -42,8 +42,8 @@ const NewQuestion = (props) => {
                     <select
                         id="AnswerFormat"
                         name="AnsFormat"
-                        value={question.answerFormat}
-                        onChange={(e) => handleChange('answerFormat', e.target.value)}
+                        value={question.AnsFormat}
+                        onChange={(e) => handleChange('AnsFormat', e.target.value)}
                     >
                         <option value="text">Text</option>
                         <option value="multiple-choice">Multiple Choice</option>

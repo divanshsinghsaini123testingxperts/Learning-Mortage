@@ -2,6 +2,7 @@
 using Backend.Repositories;
 using Backend.Repositories.Contract;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.SqlServer.Server;
 
 namespace Backend.Controllers
 {
@@ -53,6 +54,8 @@ namespace Backend.Controllers
                     //return BadRequest("one question is not complete ");
                     continue; 
                 }
+                ques.FormId = formId;
+                Console.WriteLine(ques.FormId);
                 await _questionRepository.AddAsync(ques);
             }
             await _questionRepository.SaveChangesAsync();

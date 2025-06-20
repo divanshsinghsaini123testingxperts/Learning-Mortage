@@ -5,6 +5,7 @@ import './CustomForms.css';
 const CustomForms = () => {
   const { Id } = useParams();
   const [data, setData] = useState([]);
+  
   useEffect(() => {
     const result = fetch(`https://localhost:7294/api/CustomForms/${Id}`, {
       method: 'GET',
@@ -15,6 +16,7 @@ const CustomForms = () => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
+ 
       return response.json();
     }).then(data => {
       console.log('Forms fetched successfully:', data);
@@ -44,6 +46,8 @@ const CustomForms = () => {
   }
   const handleEdit = (formId) => {
     // Redirect to the edit form page with the formId
+    debugger;
+    console.log("Editing form with ID:", formId);
     window.location.href = `/home/${Id}/Create_custom_form/${formId}`;
   }
   return (
@@ -64,12 +68,13 @@ const CustomForms = () => {
           </thead>
           <tbody>
             {data.map((row) => (
-              <tr key={row.Id}>
-                <td>{row.Id}</td>
-                <td>{row.EngFormName}</td>
+              <tr key={row.id}>
+                {console.log(row)}
+                <td>{row.engFormName}</td>
+                <td>{row.frenchFormName}</td>
                 <td>
-                  <button onClick={() => handleEdit(row.Id)}>Edit</button>
-                  <button onClick={() => handleDelete(row.Id)}>Delete</button>
+                  <button onClick={() => handleEdit(row.id)}>Edit</button>
+                  <button onClick={() => handleDelete(row.id)}>Delete</button>
                 </td>
               </tr>
             ))}

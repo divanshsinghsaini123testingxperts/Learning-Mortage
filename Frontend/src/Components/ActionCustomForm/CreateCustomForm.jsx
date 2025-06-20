@@ -81,6 +81,7 @@ const CreateCustomForm = () => {
           });
           //update the questions
           //i want to send the questions array to the api
+          
           await fetch(`https://localhost:7294/api/CustomForms/UpdateQuestions/${formId}`, {
             method: 'PUT',
             headers: {
@@ -102,7 +103,7 @@ const CreateCustomForm = () => {
           //update the endpoint 
 
         } else {
-           debugger;
+            
            //call the api to create a new form
                 const formRes = await fetch(`https://localhost:7294/api/CustomForms/AddForm`, {
                 method: 'POST',
@@ -148,16 +149,16 @@ const CreateCustomForm = () => {
             FrenchQuestion: '',
             RequiredField: false,
             AnsFormat: 'text', // 
-          //important 
+          // important 
           // hmne yaha form id isliye menstion nhi ki h
-          //we know that all belong to same form id 
+          // we know that all belong to same form id 
           // but we have to differentiate them in the backend
-          //ki we just created it or updated it
-          //so in our first api call , we just created a form and want the form id , that is creeated ,
+          // ki we just created it or updated it
+          // so in our first api call , we just created a form and want the form id , that is creeated ,
           // and in next call we sent it with the question array 
           // so that the question can be added to the form
-          //but their is a catch 
-          //but in somecauses we have to add more questions into the form 
+          // but their is a catch 
+          // but in somecauses we have to add more questions into the form 
           // so we will just add the question to the array
           // and our update api will take care of it
         };
@@ -184,7 +185,7 @@ const CreateCustomForm = () => {
         {questions.length > 0 && questions.map((q, idx) => (
                 <NewQuestion
                     key={idx}
-                    id={idx}
+                    id={0}
                     x={idx + 1}
                     question={q}
                     updateQuestion={UpdateQuestion}
