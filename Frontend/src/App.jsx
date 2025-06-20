@@ -6,7 +6,8 @@ function App() {
   const [Token, setToken] = useState(localStorage.getItem('token') || null);
 
   if (Token) {
-    return <Navigate to="/home" />;
+    const id = localStorage.getItem('id');
+    return <Navigate to={`/home/${id}`} />;
   }
 
   return (

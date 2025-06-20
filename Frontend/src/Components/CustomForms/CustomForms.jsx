@@ -1,32 +1,57 @@
-import { useEffect } from "react"
+import { useEffect  , useState} from "react"
 import { Link , useParams } from "react-router-dom";
 import './CustomForms.css';
 
 const CustomForms = () => {
   const { Id } = useParams();
-  // useEffect(() => {
-  //   const data = fetch('https://localhost:7294/api/CustomForm/GetAllForms', {
-  //     method: 'GET',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //   }).then(response => {
-  //     if (!response.ok) {
-  //       throw new Error('Network response was not ok');
-  //     }
-  //     return response.json();
-  //   }).then(data => {
-  //     console.log('Forms fetched successfully:', data);
-  //   }).catch(error => {
-  //     console.error('There was a problem with the fetch operation:', error);
-  //   });
-  // }, [])
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const result = fetch(`https://localhost:7294/api/CustomForms/${Id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    }).then(data => {
+      console.log('Forms fetched successfully:', data);
+      setData(data);
+    }).catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+  }, [Id]);
+  const handleDelete = (formId) => {
+    fetch(`https://localhost:7294/api/CustomForms/${formId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    }).then(data => {
+      console.log('Form deleted successfully:', data);
+      // Update the state to remove the deleted form
+      setData(prevData => prevData.filter(form => form.Id !== formId));
+    }).catch(error => {
+      console.error('There was a problem with the delete operation:', error);
+    });
+  }
+  const handleEdit = (formId) => {
+    // Redirect to the edit form page with the formId
+    window.location.href = `/home/${Id}/Create_custom_form/${formId}`;
+  }
   return (
     <div className="custom-forms-container">
       <header>Custom Forms</header>
       <div className="form-management">
         <h3>Form Management</h3>
-        <Link to={`/home/${Id}/Create_custom_form`}>Add Form</Link>
+        <Link to={`/home/${Id}/Create_custom_form/-1`}>Add Form</Link>
       </div>
       <div className="form-list">
         <table>
@@ -38,16 +63,16 @@ const CustomForms = () => {
             </tr>
           </thead>
           <tbody>
-            {/* {data.map((row) => (
-              <tr key={row.id}>
-                <td>{row.formName}</td>
-                
+            {data.map((row) => (
+              <tr key={row.Id}>
+                <td>{row.Id}</td>
+                <td>{row.EngFormName}</td>
                 <td>
-                  <button>Edit</button>
-                  <button>Delete</button>
+                  <button onClick={() => handleEdit(row.Id)}>Edit</button>
+                  <button onClick={() => handleDelete(row.Id)}>Delete</button>
                 </td>
               </tr>
-            ))} */}
+            ))}
           </tbody>
         </table>
       </div>

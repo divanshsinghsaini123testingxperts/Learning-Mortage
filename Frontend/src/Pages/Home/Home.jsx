@@ -17,6 +17,8 @@ function Home() {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('id');
+    localStorage.removeItem('email');
     navigate('/login');
   };
 

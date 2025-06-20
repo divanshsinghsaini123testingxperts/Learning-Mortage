@@ -51,7 +51,7 @@ const router = createBrowserRouter([
         errorElement: <div>Failed to load custom forms</div>
       },
       {
-        path: 'Create_custom_form',
+        path: 'Create_custom_form/:formId',
         element: <CreateCustomForm />,
         errorElement: <div>Failed to create custom form</div>
       },

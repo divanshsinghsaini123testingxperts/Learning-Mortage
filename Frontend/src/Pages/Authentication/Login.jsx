@@ -52,6 +52,8 @@ function Login(){
 
                 const empId = await empResponse.json();
                 if (typeof empId === 'number') {
+                    localStorage.setItem('id', empId);
+                    localStorage.setItem('email', email);
                     navigate(`/home/${empId}`);
                 } else {
                     setError('Invalid employee ID received');

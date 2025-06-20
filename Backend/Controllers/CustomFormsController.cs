@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
 {
+
+    [ApiController]
     [Route("api/[controller]")]
     public class CustomFormsController : Controller
     {
@@ -21,6 +23,7 @@ namespace Backend.Controllers
         [HttpGet("GetQuestionsByFormId/{formId}")]
         public async Task<IActionResult> GetQuestionsByFormId(int formId)
         {
+
             var questions = await _questionRepository.GetByFormIdAsync(formId);
             return Ok(questions);
         }
@@ -36,34 +39,60 @@ namespace Backend.Controllers
             return Ok("Question deleted successfully.");
         }
         [HttpPost("AddQuestion/{formId}")]
-        public async Task<IActionResult> AddQuestion(int formId, [FromBody] Question question)
+        public async Task<IActionResult> AddQuestion(int formId, [FromBody] List<Question> questions)
         {
-            if (question == null || question.FormId != formId)
+            if(formId == 0)
             {
-                return BadRequest("Invalid question data or form ID mismatch.");
+                return BadRequest("Form id is zero ");
             }
-            await _questionRepository.AddAsync(question);
+
+            foreach(var ques in questions)
+            {
+                if (ques == null || ques.EngQuestion == "")
+                {
+                    //return BadRequest("one question is not complete ");
+                    continue; 
+                }
+                await _questionRepository.AddAsync(ques);
+            }
             await _questionRepository.SaveChangesAsync();
-            return Ok("Question added successfully.");
+            return Ok("All Questions added successfully.");
         }
-        [HttpPut("UpdateQuestion/{questionId}")]
-        public async Task<IActionResult> UpdateQuestion(int questionId, [FromBody] Question question)
+        [HttpPut("UpdateQuestion/{FormId}")]
+        public async Task<IActionResult> UpdateQuestion(int FormId, [FromBody] List<Question> questions)
         {
-            if (question == null || question.Id != questionId)
+            // Get all existing questions for the form from the DB
+            var existingQuestions = await _questionRepository.GetByFormIdAsync(FormId);
+
+            // Find IDs in the incoming list
+            var incomingIds = questions.Where(q => q.Id != 0).Select(q => q.Id).ToHashSet();
+
+            // 1. Update or Add
+            foreach (var question in questions)
             {
-                return BadRequest("Invalid question data or question ID mismatch.");
+                question.FormId = FormId; // Ensure FormId is set
+
+                if (question.Id == 0)
+                {
+                    // New question, add it
+                    await _questionRepository.AddAsync(question);
+                }
+                else
+                {
+                    // Existing question, update it
+                    await _questionRepository.UpdateAsync(question);
+                }
             }
-            else if (await _questionRepository.ExistsAsync(questionId) == false)
+
+            // 2. Delete questions not in the incoming list
+            var toDelete = existingQuestions.Where(q => !incomingIds.Contains(q.Id)).ToList();
+            foreach (var question in toDelete)
             {
-                return NotFound("Question not found.");
+                await _questionRepository.DeleteAsync(question.Id);
             }
-            var updateStatus = await _questionRepository.UpdateAsync(question);
-            if (!updateStatus)
-            {
-                return NotFound("Failed to update question.");
-            }
+
             await _questionRepository.SaveChangesAsync();
-            return Ok("Question updated successfully.");
+            return Ok("Questions updated successfully.");
         }
         /// --------------------Crud for forms -------------------- ///
         [HttpGet("{employeeId}")]
@@ -84,17 +113,19 @@ namespace Backend.Controllers
             return Ok("Form deleted successfully.");
         }
 
-        [HttpPost("AddForm/{employeeId}")]
-        public async Task<IActionResult> AddForm(int employeeId, [FromBody] CustomForm form)
+        [HttpPost("AddForm")]
+        public async Task<IActionResult> AddForm( [FromBody] CustomForm form)
         {
-            if (form == null || form.AdminId != employeeId)
+            if (form == null )
             {
                 return BadRequest("Invalid form data or employee ID mismatch.");
             }
             await _customFormsRepository.AddAsync(form);
             await _customFormsRepository.SaveChangesAsync();
-            return Ok("Form added successfully.");
+
+            return Ok(new { message = "Form added successfully.", formId = form.Id });
         }
+        
         [HttpPut("UpdateForm/{formId}")]
         public async Task<IActionResult> UpdateForm(int formId, [FromBody] CustomForm form)
         {
