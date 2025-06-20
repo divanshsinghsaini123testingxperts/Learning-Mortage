@@ -119,16 +119,11 @@
   {
     "ContainingType": "Backend.Controllers.CustomFormsController",
     "Method": "AddForm",
-    "RelativePath": "api/CustomForms/AddForm/{employeeId}",
+    "RelativePath": "api/CustomForms/AddForm",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
-      {
-        "Name": "employeeId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
       {
         "Name": "form",
         "Type": "Backend.Models.CustomForm",
@@ -151,8 +146,8 @@
         "IsRequired": true
       },
       {
-        "Name": "question",
-        "Type": "Backend.Models.Question",
+        "Name": "questions",
+        "Type": "System.Collections.Generic.List\u00601[[Backend.Models.Question, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
@@ -230,19 +225,19 @@
   {
     "ContainingType": "Backend.Controllers.CustomFormsController",
     "Method": "UpdateQuestion",
-    "RelativePath": "api/CustomForms/UpdateQuestion/{questionId}",
+    "RelativePath": "api/CustomForms/UpdateQuestion/{FormId}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "questionId",
+        "Name": "FormId",
         "Type": "System.Int32",
         "IsRequired": true
       },
       {
-        "Name": "question",
-        "Type": "Backend.Models.Question",
+        "Name": "questions",
+        "Type": "System.Collections.Generic.List\u00601[[Backend.Models.Question, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],

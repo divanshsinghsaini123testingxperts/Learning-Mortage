@@ -211,17 +211,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Question"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Question"
+                }
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Question"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Question"
+                }
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Question"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Question"
+                }
               }
             }
           }
@@ -233,14 +242,14 @@
         }
       }
     },
-    "/api/CustomForms/UpdateQuestion/{questionId}": {
+    "/api/CustomForms/UpdateQuestion/{FormId}": {
       "put": {
         "tags": [
           "CustomForms"
         ],
         "parameters": [
           {
-            "name": "questionId",
+            "name": "FormId",
             "in": "path",
             "required": true,
             "schema": {
@@ -253,17 +262,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Question"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Question"
+                }
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Question"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Question"
+                }
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Question"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Question"
+                }
               }
             }
           }
@@ -321,21 +339,10 @@
         }
       }
     },
-    "/api/CustomForms/AddForm/{employeeId}": {
+    "/api/CustomForms/AddForm": {
       "post": {
         "tags": [
           "CustomForms"
-        ],
-        "parameters": [
-          {
-            "name": "employeeId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
         ],
         "requestBody": {
           "content": {

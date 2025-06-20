@@ -4,11 +4,11 @@ import NewQuestion from '../NewQuestion/NewQuestion'
 import './ActionCustomForm.css';
 
 const CreateCustomForm = () => {
-    const { formId } = useParams();
+    const { formId , Id } = useParams();
     const [questions, setQuestions] = useState([]);
     const [formName, setFormName] = useState('');
     const [formNameFr, setFormNameFr] = useState('');
-    const [AdminId , setAdminId] = useState(0);
+    const [AdminId , setAdminId] = useState(Id);
     const createdFormId = 0; 
     useEffect(() => {
       if(formId!=-1) {
@@ -70,14 +70,14 @@ const CreateCustomForm = () => {
               FrenchFormName: formNameFr,
               AdminId: AdminId,
               
-            }).then(response => {
+            })
+          }).then(response => {
               if (!response.ok) {
                 throw new Error('Network response was not ok');
               }
               return response.text();
           }).catch(error => {
               throw new Error("Network response was not ok", error);
-             }),
           });
           //update the questions
           //i want to send the questions array to the api
@@ -102,7 +102,7 @@ const CreateCustomForm = () => {
           //update the endpoint 
 
         } else {
-           console.log("creating form");
+           debugger;
            //call the api to create a new form
                 const formRes = await fetch(`https://localhost:7294/api/CustomForms/AddForm`, {
                 method: 'POST',
