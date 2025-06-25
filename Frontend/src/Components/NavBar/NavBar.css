@@ -1,10 +1,10 @@
 :root {
-    --bg-base: rgba(46, 46, 46, 0.92);
-    --bg-scrolled: rgba(5, 5, 7, 0.96);
-    --text-primary: #ffffff;
-    --text-secondary: #cccccc;
-    --highlight: rgba(255, 255, 255, 0.1);
-    --border: rgba(255, 255, 255, 0.08);
+    --bg-base: #fffbe7;
+    --bg-scrolled: #fff8d6;
+    --text-primary: #222;
+    --text-secondary: #666;
+    --highlight: #fff3c4;
+    --border: #ffe082;
     --transition: all 0.25s ease;
 }
 
@@ -15,18 +15,17 @@
     left: 0;
     right: 0;
     background-color: var(--bg-base);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     z-index: 1000;
     transition: var(--transition);
     padding: 0.8rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .navbar.scrolled {
     background-color: var(--bg-scrolled);
     padding: 0.5rem 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 /* Container */
@@ -143,7 +142,7 @@
 }
 
 .logout-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: #ffe082;
 }
 
 /* Responsive */

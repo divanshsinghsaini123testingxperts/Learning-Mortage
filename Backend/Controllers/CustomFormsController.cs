@@ -28,17 +28,17 @@ namespace Backend.Controllers
             var questions = await _questionRepository.GetByFormIdAsync(formId);
             return Ok(questions);
         }
-        [HttpDelete("DeleteQuestion/{questionId}")]
-        public async Task<IActionResult> DeleteQuestion(int questionId)
-        {
-            bool res = await _questionRepository.DeleteAsync(questionId);
-            if (!res)
-            {
-                return NotFound("Question not found.");
-            }
-            await _questionRepository.SaveChangesAsync();
-            return Ok("Question deleted successfully.");
-        }
+        //[HttpDelete("DeleteQuestion/{questionId}")]
+        //public async Task<IActionResult> DeleteQuestion(int questionId)
+        //{
+        //    bool res = await _questionRepository.DeleteAsync(questionId);
+        //    if (!res)
+        //    {
+        //        return NotFound("Question not found.");
+        //    }
+        //    await _questionRepository.SaveChangesAsync();
+        //    return Ok("Question deleted successfully.");
+        //}
         [HttpPost("AddQuestion/{formId}")]
         public async Task<IActionResult> AddQuestion(int formId, [FromBody] List<Question> questions)
         {
@@ -107,6 +107,7 @@ namespace Backend.Controllers
         [HttpDelete("{formId}")]
         public async Task<IActionResult> DeleteForm(int formId)
         {
+
             bool res = await _customFormsRepository.DeleteAsync(formId);
             if (!res)
             {

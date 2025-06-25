@@ -12,7 +12,7 @@ const NewQuestion = (props) => {
         <div className="question-container">
             <div className="question-header">
                 <h2>Question {x}</h2>
-                <button onClick={deleteQuestion}>Delete Question</button>
+                <button  type="button" onClick={() => deleteQuestion(id)}>Delete Question</button>
             </div>
             <div className="question-form">
                 <div className="input-group">
@@ -21,7 +21,7 @@ const NewQuestion = (props) => {
                         type="text"
                         id="EngQuestion"
                         name="EngQuestion"
-                        value={question.engQuestion}
+                        value={question.engQuestion|| ''}
                         onChange={(e) => handleChange('engQuestion', e.target.value)}
                         placeholder="Enter question in English"
                     />
@@ -32,8 +32,8 @@ const NewQuestion = (props) => {
                         type="text"
                         id="FrQuestion"
                         name="FrenchQuestion"
-                        value={question.FrenchQuestion}
-                        onChange={(e) => handleChange('FrenchQuestion', e.target.value)}
+                        value={question.frenchQuestion || ''}
+                        onChange={(e) => handleChange('frenchQuestion', e.target.value)}
                         placeholder="Entrez la question en français"
                     />
                 </div>
@@ -42,8 +42,8 @@ const NewQuestion = (props) => {
                     <select
                         id="AnswerFormat"
                         name="AnsFormat"
-                        value={question.AnsFormat}
-                        onChange={(e) => handleChange('AnsFormat', e.target.value)}
+                        value={question.answerFormat}
+                        onChange={(e) => handleChange('answerFormat', e.target.value)}
                     >
                         <option value="text">Text</option>
                         <option value="multiple-choice">Multiple Choice</option>

@@ -766,8 +766,8 @@
             "type": "string",
             "nullable": true
           },
-          "requiredField": {
-            "type": "boolean",
+          "answerFormat": {
+            "type": "string",
             "nullable": true
           },
           "formId": {

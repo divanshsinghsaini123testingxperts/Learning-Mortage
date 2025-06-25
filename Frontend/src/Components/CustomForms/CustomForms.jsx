@@ -33,20 +33,20 @@ const CustomForms = () => {
       },
     }).then(response => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error('Network response was not ok' , response.text());
       }
-      return response.json();
+      return response.text();
     }).then(data => {
       console.log('Form deleted successfully:', data);
       // Update the state to remove the deleted form
-      setData(prevData => prevData.filter(form => form.Id !== formId));
+      setData(prevData => prevData.filter(form => form.id !== formId));
     }).catch(error => {
       console.error('There was a problem with the delete operation:', error);
     });
   }
   const handleEdit = (formId) => {
     // Redirect to the edit form page with the formId
-    debugger;
+  
     console.log("Editing form with ID:", formId);
     window.location.href = `/home/${Id}/Create_custom_form/${formId}`;
   }
@@ -61,8 +61,9 @@ const CustomForms = () => {
         <table>
           <thead>
             <tr>
+              <th>Form ID</th>
               <th>Form Name</th>
-              
+              <th>Form Name (French)</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -70,6 +71,7 @@ const CustomForms = () => {
             {data.map((row) => (
               <tr key={row.id}>
                 {console.log(row)}
+                <td>{row.id}</td>
                 <td>{row.engFormName}</td>
                 <td>{row.frenchFormName}</td>
                 <td>

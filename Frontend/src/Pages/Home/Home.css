@@ -2,7 +2,7 @@
 
 .home-layout {
   min-height: 100vh;
-  background: #000000;
+  background: #fffbe7;
   position: relative;
 }
 
@@ -21,7 +21,7 @@
   left: 0;
   width: 240px;
   height: calc(100vh - 60px);
-  background: #2d2626;
+  background: #fff8d6;
   z-index: 900;
   box-shadow: 2px 0 8px rgba(0,0,0,0.08);
   display: flex;
@@ -42,15 +42,13 @@
 .home-main {
   flex: 1;
   padding: 2.5rem 2rem 2rem 2rem;
-  background: #000000;
+  background: #fff;
   min-height: calc(100vh - 60px);
   width: calc(100% - var(--sidebar-width));
-  /* width: 100%; */
   box-shadow: 0 0 8px rgba(0,0,0,0.04);
   border-radius: 0;
   overflow-x: hidden;
   margin: 0;
   position: relative;
   left: -40px;
-  
 }

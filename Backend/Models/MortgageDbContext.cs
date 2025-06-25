@@ -1,7 +1,7 @@
-﻿using Backend.Models.Entity;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Backend.Models.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Models;
 
@@ -24,6 +24,7 @@ public partial class MortgageDbContext : DbContext
 
     public virtual DbSet<Question> Questions { get; set; }
     public virtual DbSet<GetEmployeeDTO> GetEmployeeDTO { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Server=TXCHD-PC-016\\SQLEXPRESS;Database=MortgageDB;Trusted_Connection=True;TrustServerCertificate=True;");
 
@@ -91,6 +92,9 @@ public partial class MortgageDbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__Question__3214EC075E928694");
 
+            entity.Property(e => e.AnswerFormat)
+                .HasMaxLength(20)
+                .IsUnicode(false);
             entity.Property(e => e.EngQuestion).IsUnicode(false);
             entity.Property(e => e.FormId).HasColumnName("FormID");
             entity.Property(e => e.FrenchQuestion).IsUnicode(false);

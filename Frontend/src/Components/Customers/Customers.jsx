@@ -35,7 +35,7 @@ const Customers = () => {
           console.log('Customer deleted successfully:', data);
           setMessage('Customer deleted successfully');
           setMessageType('success');
-          setData(prevData => prevData.filter(customer => customer.Id !== id));
+          setData(prevData => prevData.filter(customer => customer.id !== id));
         }).catch(error => {
           console.error('There was a problem with the fetch operation:', error);
           setMessage('Error deleting customer');

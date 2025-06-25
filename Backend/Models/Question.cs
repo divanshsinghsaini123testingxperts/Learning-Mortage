@@ -11,7 +11,7 @@ public partial class Question
 
     public string? FrenchQuestion { get; set; }
 
-    public bool? RequiredField { get; set; }
+    public string? AnswerFormat { get; set; }
 
     public int? FormId { get; set; }
 
