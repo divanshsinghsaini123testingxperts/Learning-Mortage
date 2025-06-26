@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import NewQuestion from '../NewQuestion/NewQuestion';
 import './ActionCustomForm.css';
-import { form } from 'framer-motion/client';
+import { feFuncR, form } from 'framer-motion/client';
 
 const CreateCustomForm = () => {
   var { formId, Id } = useParams();
@@ -11,6 +11,37 @@ const CreateCustomForm = () => {
   const [formNameFr, setFormNameFr] = useState('');
   const [AdminId, setAdminId] = useState(Id);
   const redirect = useNavigate();
+  useEffect(() => {
+    async function TranslatorCall(text) {
+      const body = {
+        text: text,
+        sourceLang: "en",
+        targetLang: "fr"
+      };
+
+      try {
+        const response = await fetch(`https://localhost:7294/api/CustomForms`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json(); // ✅ FIXED
+        setFormNameFr(data.translated);
+        console.log("Data translated successfully:", data.translated);
+      } catch (error) {
+        console.error('Translation problem:', error);
+      }
+    }
+
+    if (formName.trim() !== "") {
+      TranslatorCall(formName);
+    }
+  }, [formName]);
 
   useEffect(() =>{
     formId = parseInt(formId, 10); // Ensure formId is an integer

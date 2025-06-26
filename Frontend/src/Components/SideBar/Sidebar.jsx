@@ -31,6 +31,17 @@ function Sidebar() {
               Custom Forms
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to={`/home/${Id}/View_forms`}
+              end
+              className={({ isActive }) => 
+                `nav-link ${isActive ? 'active' : ''}`
+              }
+            >
+              View Forms
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </aside>

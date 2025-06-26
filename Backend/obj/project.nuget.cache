@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "v5ulB+aPNIw=",
+  "dgSpecHash": "R4nX8kCmTco=",
   "success": true,
   "projectFilePath": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Backend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Testing\\.nuget\\packages\\awssdk.core\\4.0.0.13\\awssdk.core.4.0.0.13.nupkg.sha512",
+    "C:\\Users\\Testing\\.nuget\\packages\\awssdk.translate\\4.0.0.11\\awssdk.translate.4.0.0.11.nupkg.sha512",
     "C:\\Users\\Testing\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Testing\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\Testing\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

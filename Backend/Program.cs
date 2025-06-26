@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-
+builder.Services.AddHttpClient();
 // Add Swagger configuration with JWT support
 builder.Services.AddSwaggerGen(opt =>
 {
@@ -42,6 +42,7 @@ builder.Services.AddSwaggerGen(opt =>
 });
 
 // Register services for dependency injection
+
 builder.Services.AddSingleton<ITokenService, TokenService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
@@ -49,6 +50,7 @@ builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<ICustomFormsRepository, CustomFormsRepository>();
 builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+builder.Services.AddSingleton<TranslationService>();
 
 // Database connection
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -61,24 +63,13 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp", policyBuilder =>
     {
         policyBuilder
-            .WithOrigins("http://localhost:5173", "http://localhost:5174")
+            .WithOrigins("http://localhost:5173", "http://localhost:5174", "http://localhost:5175" , "http://localhost:5176") // Add your frontend port here
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials();
     });
 });
 
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy("AllowAll", policy =>
-//    {
-//        policy.AllowAnyOrigin()
-//              .AllowAnyHeader()
-//              .AllowAnyMethod();
-//    });
-//});
-
-// JWT Authentication configuration
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {

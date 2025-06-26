@@ -86,6 +86,22 @@
   },
   {
     "ContainingType": "Backend.Controllers.CustomFormsController",
+    "Method": "Translate",
+    "RelativePath": "api/CustomForms",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Backend.Models.Entity.TranslationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.CustomFormsController",
     "Method": "GetFormsByEmployeeId",
     "RelativePath": "api/CustomForms/{employeeId}",
     "HttpMethod": "GET",
@@ -148,22 +164,6 @@
       {
         "Name": "questions",
         "Type": "System.Collections.Generic.List\u00601[[Backend.Models.Question, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Backend.Controllers.CustomFormsController",
-    "Method": "DeleteQuestion",
-    "RelativePath": "api/CustomForms/DeleteQuestion/{questionId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "questionId",
-        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

@@ -1,9 +1,11 @@
-﻿using Backend.Models;
+﻿using Amazon.Runtime.Internal.Auth;
+using Backend.Models;
 using Backend.Repositories;
 using Backend.Repositories.Contract;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.SqlServer.Server;
-
+using Backend.Services;
+using Backend.Models.Entity;
 namespace Backend.Controllers
 {
 
@@ -12,13 +14,21 @@ namespace Backend.Controllers
     public class CustomFormsController : Controller
     {
 
-
+        private readonly TranslationService _translatorService;
         private readonly ICustomFormsRepository _customFormsRepository;
         private readonly IQuestionRepository _questionRepository;
-        public CustomFormsController(ICustomFormsRepository customFormsRepository, IQuestionRepository questionRepository)
+        public CustomFormsController(ICustomFormsRepository customFormsRepository, IQuestionRepository questionRepository , TranslationService TraService)
         {
             _customFormsRepository = customFormsRepository;
             _questionRepository = questionRepository;
+            _translatorService = TraService;
+        }
+        ///-------------Endpoint for translator ----------------------/// 
+        [HttpPost]
+        public async Task<IActionResult> Translate([FromBody] TranslationRequest request)
+        {
+            var result = await _translatorService.TranslateAsync(request.Text, request.SourceLang, request.TargetLang);
+            return Ok(new { translated = result });
         }
         ///--------------------Crud for questions -------------------- ///
         [HttpGet("GetQuestionsByFormId/{formId}")]
@@ -28,17 +38,7 @@ namespace Backend.Controllers
             var questions = await _questionRepository.GetByFormIdAsync(formId);
             return Ok(questions);
         }
-        //[HttpDelete("DeleteQuestion/{questionId}")]
-        //public async Task<IActionResult> DeleteQuestion(int questionId)
-        //{
-        //    bool res = await _questionRepository.DeleteAsync(questionId);
-        //    if (!res)
-        //    {
-        //        return NotFound("Question not found.");
-        //    }
-        //    await _questionRepository.SaveChangesAsync();
-        //    return Ok("Question deleted successfully.");
-        //}
+
         [HttpPost("AddQuestion/{formId}")]
         public async Task<IActionResult> AddQuestion(int formId, [FromBody] List<Question> questions)
         {

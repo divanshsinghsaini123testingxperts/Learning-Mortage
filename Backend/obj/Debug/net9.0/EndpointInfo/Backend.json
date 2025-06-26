@@ -145,6 +145,37 @@
         }
       }
     },
+    "/api/CustomForms": {
+      "post": {
+        "tags": [
+          "CustomForms"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TranslationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TranslationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TranslationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/CustomForms/GetQuestionsByFormId/{formId}": {
       "get": {
         "tags": [
@@ -153,29 +184,6 @@
         "parameters": [
           {
             "name": "formId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/CustomForms/DeleteQuestion/{questionId}": {
-      "delete": {
-        "tags": [
-          "CustomForms"
-        ],
-        "parameters": [
-          {
-            "name": "questionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -777,6 +785,24 @@
           },
           "form": {
             "$ref": "#/components/schemas/CustomForm"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TranslationRequest": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceLang": {
+            "type": "string",
+            "nullable": true
+          },
+          "targetLang": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "Backend/1.0.0": {
         "dependencies": {
+          "AWSSDK.Translate": "4.0.0.11",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.5",
           "Microsoft.AspNetCore.OpenApi": "9.0.5",
           "Microsoft.EntityFrameworkCore": "9.0.5",
@@ -17,6 +18,25 @@
         },
         "runtime": {
           "Backend.dll": {}
+        }
+      },
+      "AWSSDK.Core/4.0.0.13": {
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.13"
+          }
+        }
+      },
+      "AWSSDK.Translate/4.0.0.11": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.0.13"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Translate.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.11"
+          }
         }
       },
       "Azure.Core/1.38.0": {
@@ -1051,6 +1071,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.Core/4.0.0.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AXofl5oANEHo9B61yi6rpu/JazjwqkuHY9JmJfdf8+FSmkFPbOmKoEb6kUgO2On8PCtBeUOEIfhZdzjJbxRAyg==",
+      "path": "awssdk.core/4.0.0.13",
+      "hashPath": "awssdk.core.4.0.0.13.nupkg.sha512"
+    },
+    "AWSSDK.Translate/4.0.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hdxQclEOKOr4KSmT1OutNvwlljlbt1VK1orKzzcU3FcbeehJBj1P1/fe+L5mjAUucTvaU+1kxyNxMwGxQ6ZtOA==",
+      "path": "awssdk.translate/4.0.0.11",
+      "hashPath": "awssdk.translate.4.0.0.11.nupkg.sha512"
     },
     "Azure.Core/1.38.0": {
       "type": "package",

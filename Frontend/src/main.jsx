@@ -13,6 +13,8 @@ import CustomForms from './Components/CustomForms/CustomForms.jsx'
 import CreateCustomForm from './Components/ActionCustomForm/CreateCustomForm.jsx'
 import AddCustomer from './Components/Customers/AddCustomer.jsx'
 import EditCustomer from './Components/Customers/EditCustomer.jsx'
+import ViewForms from './Components/CustomForms/ViewForms.jsx';
+import ViewQuestions from './Components/ViewQuestions/ViewQuestions.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -64,6 +66,16 @@ const router = createBrowserRouter([
         path: 'Edit_customer/:customerId',
         element: <EditCustomer />,
         errorElement: <div>Failed to edit customer</div>
+      },
+      {
+        path: 'View_forms',
+        element: <ViewForms />,
+        errorElement: <div>Failed to load the all forms </div>
+      },
+      {
+        path : 'View_forms/:formId',
+        element: <ViewQuestions />,
+        errorElement: <div>Failed to view form</div>
       }
     ],
   },

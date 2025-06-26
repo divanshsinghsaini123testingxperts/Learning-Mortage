@@ -2,6 +2,35 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "AWSSDK.Core/4.0.0.13": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.Translate/4.0.0.11": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[4.0.0.13, 5.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.Translate.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Translate.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Azure.Core/1.38.0": {
         "type": "package",
         "dependencies": {
@@ -1672,6 +1701,61 @@
     }
   },
   "libraries": {
+    "AWSSDK.Core/4.0.0.13": {
+      "sha512": "AXofl5oANEHo9B61yi6rpu/JazjwqkuHY9JmJfdf8+FSmkFPbOmKoEb6kUgO2On8PCtBeUOEIfhZdzjJbxRAyg==",
+      "type": "package",
+      "path": "awssdk.core/4.0.0.13",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "awssdk.core.4.0.0.13.nupkg.sha512",
+        "awssdk.core.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.Core.dll",
+        "lib/net472/AWSSDK.Core.pdb",
+        "lib/net472/AWSSDK.Core.xml",
+        "lib/net8.0/AWSSDK.Core.dll",
+        "lib/net8.0/AWSSDK.Core.pdb",
+        "lib/net8.0/AWSSDK.Core.xml",
+        "lib/netcoreapp3.1/AWSSDK.Core.dll",
+        "lib/netcoreapp3.1/AWSSDK.Core.pdb",
+        "lib/netcoreapp3.1/AWSSDK.Core.xml",
+        "lib/netstandard2.0/AWSSDK.Core.dll",
+        "lib/netstandard2.0/AWSSDK.Core.pdb",
+        "lib/netstandard2.0/AWSSDK.Core.xml",
+        "tools/account-management.ps1"
+      ]
+    },
+    "AWSSDK.Translate/4.0.0.11": {
+      "sha512": "hdxQclEOKOr4KSmT1OutNvwlljlbt1VK1orKzzcU3FcbeehJBj1P1/fe+L5mjAUucTvaU+1kxyNxMwGxQ6ZtOA==",
+      "type": "package",
+      "path": "awssdk.translate/4.0.0.11",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.Translate.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.translate.4.0.0.11.nupkg.sha512",
+        "awssdk.translate.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.Translate.dll",
+        "lib/net472/AWSSDK.Translate.pdb",
+        "lib/net472/AWSSDK.Translate.xml",
+        "lib/net8.0/AWSSDK.Translate.dll",
+        "lib/net8.0/AWSSDK.Translate.pdb",
+        "lib/net8.0/AWSSDK.Translate.xml",
+        "lib/netcoreapp3.1/AWSSDK.Translate.dll",
+        "lib/netcoreapp3.1/AWSSDK.Translate.pdb",
+        "lib/netcoreapp3.1/AWSSDK.Translate.xml",
+        "lib/netstandard2.0/AWSSDK.Translate.dll",
+        "lib/netstandard2.0/AWSSDK.Translate.pdb",
+        "lib/netstandard2.0/AWSSDK.Translate.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
     "Azure.Core/1.38.0": {
       "sha512": "IuEgCoVA0ef7E4pQtpC3+TkPbzaoQfa77HlfJDmfuaJUCVJmn7fT0izamZiryW5sYUFKizsftIxMkXKbgIcPMQ==",
       "type": "package",
@@ -4872,6 +4956,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "AWSSDK.Translate >= 4.0.0.11",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 9.0.5",
       "Microsoft.AspNetCore.OpenApi >= 9.0.5",
       "Microsoft.EntityFrameworkCore >= 9.0.5",
@@ -4930,6 +5015,10 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "AWSSDK.Translate": {
+            "target": "Package",
+            "version": "[4.0.0.11, )"
+          },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[9.0.5, )"
