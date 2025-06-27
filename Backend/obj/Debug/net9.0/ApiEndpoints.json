@@ -163,7 +163,7 @@
       },
       {
         "Name": "questions",
-        "Type": "System.Collections.Generic.List\u00601[[Backend.Models.Question, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Backend.Models.Entity.QuestionDto, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
@@ -237,7 +237,7 @@
       },
       {
         "Name": "questions",
-        "Type": "System.Collections.Generic.List\u00601[[Backend.Models.Question, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Backend.Models.Entity.QuestionDto, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],

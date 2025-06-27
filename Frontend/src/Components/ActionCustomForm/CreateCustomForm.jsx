@@ -90,6 +90,7 @@ const CreateCustomForm = () => {
           return response.json();
         })
         .then((data) => {
+
           setQuestions(data || []);
           console.log('Questions fetched successfully:', data);
         })
@@ -195,7 +196,8 @@ const CreateCustomForm = () => {
       Id: 0,
       EngQuestion: '',
       FrenchQuestion: '',
-      AnsFormat: 'Text',
+      AnswerFormat: 'Text',
+      Options : [],
     };
     setQuestions((prevQuestions) => [...prevQuestions, newQuestion]);
   };

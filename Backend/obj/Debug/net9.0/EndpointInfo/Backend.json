@@ -221,7 +221,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Question"
+                  "$ref": "#/components/schemas/QuestionDto"
                 }
               }
             },
@@ -229,7 +229,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Question"
+                  "$ref": "#/components/schemas/QuestionDto"
                 }
               }
             },
@@ -237,7 +237,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Question"
+                  "$ref": "#/components/schemas/QuestionDto"
                 }
               }
             }
@@ -272,7 +272,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Question"
+                  "$ref": "#/components/schemas/QuestionDto"
                 }
               }
             },
@@ -280,7 +280,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Question"
+                  "$ref": "#/components/schemas/QuestionDto"
                 }
               }
             },
@@ -288,7 +288,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Question"
+                  "$ref": "#/components/schemas/QuestionDto"
                 }
               }
             }
@@ -771,6 +771,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "answer": {
+            "type": "string",
+            "nullable": true
+          },
           "form": {
             "$ref": "#/components/schemas/CustomForm"
           }
@@ -815,8 +819,46 @@
             "format": "int32",
             "nullable": true
           },
+          "options": {
+            "type": "string",
+            "nullable": true
+          },
           "form": {
             "$ref": "#/components/schemas/CustomForm"
+          }
+        },
+        "additionalProperties": false
+      },
+      "QuestionDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "engQuestion": {
+            "type": "string",
+            "nullable": true
+          },
+          "frenchQuestion": {
+            "type": "string",
+            "nullable": true
+          },
+          "answerFormat": {
+            "type": "string",
+            "nullable": true
+          },
+          "formId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false

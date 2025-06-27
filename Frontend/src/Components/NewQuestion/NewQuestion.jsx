@@ -7,6 +7,9 @@ const NewQuestion = (props) => {
   const handleChange = (field, value) => {
     updateQuestion(id, { ...question, [field]: value });
   };
+  const handleOptionChange = (field , value) =>{
+     
+  }
 
     useEffect(() => {
        async function TranslatorCall(text) {
@@ -86,6 +89,45 @@ const NewQuestion = (props) => {
             <option value="checkbox">Checkbox</option>
           </select>
         </div>
+        {/* dynamically change the options to add */}
+        {(question.answerFormat === "multiple-choice" || question.answerFormat === "checkbox") && (
+          <div className="input-group">
+            <label>Options</label>
+            {(question.options || []).map((option, idx) => (
+              <div key={idx} style={{ display: "flex", alignItems: "center", marginBottom: 4 }}>
+                <input
+                  type="text"
+                  value={option}
+                  onChange={e => {
+                    const newOptions = [...(question.options || [])];
+                    newOptions[idx] = e.target.value;
+                    handleChange('options', newOptions);
+                  }}
+                  placeholder={`Option ${idx + 1}`}
+                />
+                <button
+                  type="button"
+                  style={{ marginLeft: 8 }}
+                  onClick={() => {
+                    const newOptions = [...(question.options || [])];
+                    newOptions.splice(idx, 1);
+                    handleChange('options', newOptions);
+                  }}
+                  aria-label="Remove option"
+                >
+                  &minus;
+                </button>
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={() => handleChange('options', [...(question.options || []), ""])}
+              style={{ marginTop: 4 }}
+            >
+              + Add Option
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

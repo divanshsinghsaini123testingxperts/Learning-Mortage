@@ -13,5 +13,7 @@ public partial class FormDatum
 
     public int CustomerId { get; set; }
 
+    public string? Answer { get; set; }
+
     public virtual CustomForm Form { get; set; } = null!;
 }
