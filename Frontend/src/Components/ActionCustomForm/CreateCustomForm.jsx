@@ -30,7 +30,7 @@ const CreateCustomForm = () => {
           throw new Error('Network response was not ok');
         }
 
-        const data = await response.json(); // ✅ FIXED
+        const data = await response.json(); 
         setFormNameFr(data.translated);
         console.log("Data translated successfully:", data.translated);
       } catch (error) {
@@ -38,9 +38,11 @@ const CreateCustomForm = () => {
       }
     }
 
-    if (formName.trim() !== "") {
+    const handler = setTimeout(() => {
       TranslatorCall(formName);
-    }
+    }, 1000); // 1 second delay
+
+      return () => clearTimeout(handler); 
   }, [formName]);
 
   useEffect(() =>{

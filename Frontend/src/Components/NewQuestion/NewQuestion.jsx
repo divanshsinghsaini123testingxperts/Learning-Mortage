@@ -8,33 +8,42 @@ const NewQuestion = (props) => {
     updateQuestion(id, { ...question, [field]: value });
   };
 
-//   // Auto-translate when engQuestion changes
-//   useEffect(() => {
-//     if (!question.engQuestion || question.engQuestion.trim() === "") return;
+    useEffect(() => {
+       async function TranslatorCall(text) {
+         const body = {
+           text: text,
+           sourceLang: "en",
+           targetLang: "fr"
+         };
+   
+         try {
+           const response = await fetch(`https://localhost:7294/api/CustomForms`, {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify(body)
+           });
+   
+           if (!response.ok) {
+             throw new Error('Network response was not ok');
+           }
+   
+           const data = await response.json(); 
+           handleChange('frenchQuestion', data.translated) ;
+           console.log("Data translated successfully:", data.translated);
+         } catch (error) {
+           console.error('Translation problem:', error);
+         }
+       }
+        if (question.engQuestion && question.engQuestion.trim() !== ""){
+          const handler = setTimeout(() => {
+            TranslatorCall(question.engQuestion);
+          }, 1000); // 2 second delay
+          return () => clearTimeout(handler); 
+        }
+         
+     }, [question.engQuestion]);
+   
 
-//     const body = {
-//       text: question.engQuestion,
-//       sourceLang: "en",
-//       targetLang: "fr"
-//     };
-
-//     fetch(`https://localhost:7294/api/CustomForms`, {
-//       method: 'POST',
-//       headers: { 'Content-Type': 'application/json' },
-//       body: JSON.stringify(body)
-//     })
-//       .then((res) => {
-//         if (!res.ok) throw new Error("Network response was not ok");
-//         return res.json();
-//       })
-//       .then((data) => {
-//         updateQuestion(id, { ...question, frenchQuestion: data.translated });
-//         console.log("Auto-translated:", data.translated);
-//       })
-//       .catch((err) => {
-//         console.error("Translation failed:", err);
-//       });
-//   }, [question.engQuestion]); // Triggers on every engQuestion change
 
   return (
     <div className="question-container">
@@ -69,7 +78,9 @@ const NewQuestion = (props) => {
             id={`AnswerFormat-${id}`}
             value={question.answerFormat}
             onChange={(e) => handleChange('answerFormat', e.target.value)}
+            required
           >
+            <option value="">--Select--</option>
             <option value="text">Text</option>
             <option value="multiple-choice">Multiple Choice</option>
             <option value="checkbox">Checkbox</option>

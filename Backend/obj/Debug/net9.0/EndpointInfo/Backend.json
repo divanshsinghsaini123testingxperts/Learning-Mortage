@@ -655,6 +655,13 @@
           "admin": {
             "$ref": "#/components/schemas/Employee"
           },
+          "formData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FormDatum"
+            },
+            "nullable": true
+          },
           "questions": {
             "type": "array",
             "items": {
@@ -741,6 +748,31 @@
               "$ref": "#/components/schemas/Customer"
             },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FormDatum": {
+        "type": "object",
+        "properties": {
+          "entryid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "questionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "formId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "form": {
+            "$ref": "#/components/schemas/CustomForm"
           }
         },
         "additionalProperties": false

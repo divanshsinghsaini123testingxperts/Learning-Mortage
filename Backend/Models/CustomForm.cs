@@ -15,5 +15,7 @@ public partial class CustomForm
 
     public virtual Employee? Admin { get; set; }
 
+    public virtual ICollection<FormDatum> FormData { get; set; } = new List<FormDatum>();
+
     public virtual ICollection<Question> Questions { get; set; } = new List<Question>();
 }

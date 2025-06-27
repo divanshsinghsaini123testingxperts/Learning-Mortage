@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Backend.Models.Entity;
+﻿using Backend.Models.Entity;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 
 namespace Backend.Models;
 
@@ -22,10 +22,13 @@ public partial class MortgageDbContext : DbContext
 
     public virtual DbSet<Employee> Employees { get; set; }
 
+    public virtual DbSet<FormDatum> FormData { get; set; }
+
     public virtual DbSet<Question> Questions { get; set; }
     public virtual DbSet<GetEmployeeDTO> GetEmployeeDTO { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
         => optionsBuilder.UseSqlServer("Server=TXCHD-PC-016\\SQLEXPRESS;Database=MortgageDB;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -88,16 +91,31 @@ public partial class MortgageDbContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<FormDatum>(entity =>
+        {
+            entity.HasKey(e => e.Entryid).HasName("PK__FormData__F57AD6DFAE0C0FB8");
+
+            entity.Property(e => e.Entryid).ValueGeneratedNever();
+
+            entity.HasOne(d => d.Form).WithMany(p => p.FormData)
+                .HasForeignKey(d => d.FormId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__FormData__FormId__2BFE89A6");
+        });
+
         modelBuilder.Entity<Question>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Question__3214EC075E928694");
 
             entity.Property(e => e.AnswerFormat)
-                .HasMaxLength(20)
+                .HasMaxLength(255)
                 .IsUnicode(false);
             entity.Property(e => e.EngQuestion).IsUnicode(false);
             entity.Property(e => e.FormId).HasColumnName("FormID");
             entity.Property(e => e.FrenchQuestion).IsUnicode(false);
+            entity.Property(e => e.Options)
+                .HasMaxLength(255)
+                .IsUnicode(false);
 
             entity.HasOne(d => d.Form).WithMany(p => p.Questions)
                 .HasForeignKey(d => d.FormId)
