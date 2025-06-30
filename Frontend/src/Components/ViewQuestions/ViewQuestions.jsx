@@ -1,46 +1,164 @@
-
-
-
-
 import React, { useEffect , useState } from 'react'
 import { useParams } from 'react-router-dom';
 import  Question  from './Question.jsx'
+import { useNavigate } from 'react-router-dom';
 export default function ViewQuestion() {
-  const { formId } = useParams();
+  const { Id ,formId } = useParams();
   const [questions, setQuestions] = useState([]);
+  const [ customers , setCustomers ] = useState([]);
+  const [formName, setFormName] = useState();
+  const [selectedCustomer, setSelectedCustomer] = useState('');
+  const [customerError, setCustomerError] = useState('');
+  const [formResponse, setFormResponse] = useState([]);
+  
+  const navigate = useNavigate();
   useEffect(() => {
-   fetch(`https://localhost:7294/api/CustomForms/GetQuestionsByFormId/${formId}`, {
+      console.log('Fetching data for formId:', formId, 'and Id:', Id);
+      const fetchQuestions = fetch(`https://localhost:7294/api/CustomForms/GetQuestionsByFormId/${formId}`, {
         method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
+        headers: { 'Content-Type': 'application/json' },
+      }).then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch questions');
+        return res.json();
+      });
+
+      const fetchCustomers = fetch(`https://localhost:7294/api/Customer/by-employee/${Id}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      }).then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch customers');
+        return res.json();
+      });
+
+      const fetchFormName = fetch(`https://localhost:7294/api/CustomForms/GetFormById/${formId}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      }).then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch form name');
+        return res.json();
+      });
+
+      Promise.all([fetchQuestions, fetchCustomers, fetchFormName])
+        .then(([questionsData, customersData, formNameData]) => {
+          console.log('Questions Data:', questionsData);
+          setQuestions(questionsData);
+          setCustomers(customersData);
+          setFormName(formNameData.formName);
+          console.log('All data fetched successfully');
+        })
+        .catch((err) => {
+          console.error('Error during data fetching:', err);
+        });
+}, [formId, Id]);
+
+const handleSubmit = () => {
+  if (!selectedCustomer) {
+    setCustomerError('Please select a customer.');
+    return;
+  }
+  async function IsResponseExists() {
+    const response = await fetch(`https://localhost:7294/api/CustomForms/CheckentryByCustomerId/${selectedCustomer}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formId)
+    });
+    return response.json();
+  }
+  const convertedResponses = (optionArray)=>{
+      var s = '';
+      for (let i = 0; i < optionArray.length; i++) {
+          if (optionArray[i]) {
+            if( i == 0){
+              s += optionArray[i];
+
+            }else{ 
+              s = s + '^' + optionArray[i];}
           }
-          return response.json();
+      }
+      return s;
+  }
+  //now we need to bind all the details into a array and send it to backend 
+  // questionId , FormId , CustomerId , Answer ( if this is text then sent it as well , if it is checkbox then concatinate the values and send it as a string )
+  const responses = questions.map((question, index) => {
+    return {
+      questionId: question.id,
+      formId: formId,
+      customerId: selectedCustomer,
+      answer: typeof formResponse[index] === 'string' ? formResponse[index] :  convertedResponses(formResponse[index]), // Use the response from formResponse or an empty string if not provided
+    };
+  });
+
+
+  console.log('Responses to be submitted:', responses);
+   async function submitResponses() {
+        await fetch(`https://localhost:7294/api/CustomForms/AddFormEntry/${formId}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify( responses ),
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error('Failed to submit responses');
+          return res.text();
         })
         .then((data) => {
-          setQuestions(data);
-          console.log('Questions fetched successfully:', data);
+          console.log('Form submitted successfully:', data);
         })
-        .catch((error) => {
-          console.error('There was a problem with the fetch operation:', error);
+        .catch((err) => {
+          console.error('Error during form submission:', err);
         });
-    }, [formId]);
+      }
+
+
+  IsResponseExists().then((exists) => {
+      if (!exists) {
+        submitResponses().then(() => {
+          alert('Response submitted successfully!');
+          // navigate('/some-other-page'); // Change this to your desired route
+        });
+      } else {
+        alert('Response already exists for this customer. Please select a different customer or update the existing response.');
+      }
+  });
+    }
+};
+
   return (
      <>
-        <div>
-            <h3>View Name {formId}</h3>
+        
+            <h3>{formName}</h3>
+            <h3>*All Questions are mandatory</h3>
+            <label>Select Customer - </label>
+            <select
+              value={selectedCustomer}
+              onChange={e => {
+                setSelectedCustomer(e.target.value);
+                setCustomerError('');
+              }}
+              style={{ marginBottom: '1rem' }}
+            >
+              <option value="">-- Please select a customer --</option>
+              {customers.map(cust => (
+                <option key={cust.id} value={cust.id}>
+                  {cust.name}
+                </option>
+              ))}
+            </select>
+            {customerError && <span style={{ color: 'red', marginLeft: 8 }}>{customerError}</span>}
+             
+
+            
             {questions.map((question , index) => (
                 <Question 
                 idx = {index} 
                 key={question.id}
-                questionId = {question.id} engQuestion = {question.engQuestion}
-                frenchQuestion={question.frenchQuestion} questionType ={question.questionType} />
+                question = {question}
+                setFormResponse = {setFormResponse} 
+                formResponse = {formResponse}
+                />
             ))}
-        </div>
+            <button onClick={handleSubmit} style={{ marginTop: '1rem' }}>
+              Submit
+            </button>
      </>
   )
 }

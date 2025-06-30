@@ -18,11 +18,14 @@ namespace Backend.Controllers
         private readonly TranslationService _translatorService;
         private readonly ICustomFormsRepository _customFormsRepository;
         private readonly IQuestionRepository _questionRepository;
-        public CustomFormsController(ICustomFormsRepository customFormsRepository, IQuestionRepository questionRepository , TranslationService TraService)
+        private readonly IFormDataRepository _formDataRepository;
+
+        public CustomFormsController(ICustomFormsRepository customFormsRepository, IQuestionRepository questionRepository , TranslationService TraService, IFormDataRepository formdatarepo)
         {
             _customFormsRepository = customFormsRepository;
             _questionRepository = questionRepository;
             _translatorService = TraService;
+            _formDataRepository = formdatarepo;
         }
         ///-------------Endpoint for translator ----------------------/// 
         [HttpPost]
@@ -32,6 +35,30 @@ namespace Backend.Controllers
             return Ok(new { translated = result });
         }
         ///--------------------Crud for questions -------------------- ///
+        ///for saving the enteries 
+        [HttpPost("CheckentryByCustomerId/{CustomerId}")]
+        public async Task<bool> CheckentryByCustomerId(int CustomerId , [FromBody] int FormID)
+        {
+            bool isExits =  await _formDataRepository.CheckCustomerIdWithFormId(CustomerId, FormID);
+            return isExits; 
+        }
+        [HttpPost("AddFormEntry/{formId}")]
+        public async Task<IActionResult> AddFormEntry(int formId, [FromBody] List<FormResponseDTO> responses)
+        {
+            foreach (var response in responses)
+            {
+                var temp = new FormDatum
+                {
+                    FormId = formId,
+                    QuestionId = response.QuestionId,
+                    CustomerId = response.CustomerId,
+                    Answer = response.Answer
+                };
+                await _formDataRepository.AddAsync(temp);
+            }
+            await _formDataRepository.SaveChangesAsync();
+            return Ok("data added successfully.");
+        }
         [HttpGet("GetQuestionsByFormId/{formId}")]
         public async Task<IActionResult> GetQuestionsByFormId(int formId)
         {

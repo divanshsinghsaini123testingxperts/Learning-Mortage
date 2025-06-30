@@ -150,6 +150,27 @@
   },
   {
     "ContainingType": "Backend.Controllers.CustomFormsController",
+    "Method": "AddFormEntry",
+    "RelativePath": "api/CustomForms/AddFormEntry/{formId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "formId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "responses",
+        "Type": "System.Collections.Generic.List\u00601[[Backend.Models.Entity.FormResponseDTO, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.CustomFormsController",
     "Method": "AddQuestion",
     "RelativePath": "api/CustomForms/AddQuestion/{formId}",
     "HttpMethod": "POST",
@@ -168,6 +189,37 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.CustomFormsController",
+    "Method": "CheckentryByCustomerId",
+    "RelativePath": "api/CustomForms/CheckentryByCustomerId/{CustomerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CustomerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "FormID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Backend.Controllers.CustomFormsController",

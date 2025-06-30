@@ -50,7 +50,8 @@ builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<ICustomFormsRepository, CustomFormsRepository>();
 builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
-builder.Services.AddSingleton<TranslationService>();
+builder.Services.AddScoped<TranslationService>();
+builder.Services.AddScoped<IFormDataRepository, FormDataRepository>();
 
 // Database connection
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

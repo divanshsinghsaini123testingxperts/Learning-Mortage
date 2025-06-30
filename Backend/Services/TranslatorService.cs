@@ -4,6 +4,7 @@ using System.Text.Json;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration;
+using System.Collections.Specialized;
 
 namespace Backend.Services
 {
@@ -39,7 +40,8 @@ namespace Backend.Services
             var responseBody = await response.Content.ReadAsStringAsync();
 
             using var doc = JsonDocument.Parse(responseBody);
-            var translatedText = doc.RootElement[0].GetProperty("translations")[0].GetProperty("text").GetString();
+            Console.WriteLine(responseBody);
+            var translatedText =  doc.RootElement[0].GetProperty("translations")[0].GetProperty("text").GetString();
             return translatedText;
         }
     }
