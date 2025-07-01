@@ -46,6 +46,7 @@ const router = createBrowserRouter([
         path: '',
         element: <Customers />,
         errorElement: <div>Failed to load customers</div>
+        
       },
       {
         path: 'Custom_forms',
@@ -76,7 +77,12 @@ const router = createBrowserRouter([
         path : 'View_forms/:formId',
         element: <ViewQuestions />,
         errorElement: <div>Failed to view form</div>
-      }
+      }, 
+      // {
+      //   path: '',
+      //   element: < />,
+      //   errorElement: <div>Failed to view form</div>
+      // }
     ],
   },
   {

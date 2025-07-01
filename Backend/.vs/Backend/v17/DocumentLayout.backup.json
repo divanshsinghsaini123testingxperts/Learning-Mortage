@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\contract\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\contract\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\models\\mortgagedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:models\\mortgagedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\contract\\iquestionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\contract\\iquestionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\questionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\questionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\contract\\iformdatarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\contract\\iformdatarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\models\\customform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:models\\customform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\controllers\\customformscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:controllers\\customformscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\questionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\questionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\contract\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\contract\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\contract\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\repositories\\formdatarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:repositories\\formdatarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,46 +78,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\GenericRepository.cs",
-              "RelativeToolTip": "Repositories\\GenericRepository.cs",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T10:50:47.927Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-01T06:30:50.849Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IQuestionRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IQuestionRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Contract\\IQuestionRepository.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IQuestionRepository.cs",
-              "RelativeToolTip": "Repositories\\Contract\\IQuestionRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAVAAAAAAAAAA==",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-01T06:30:49.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomForm.cs",
+              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\CustomForm.cs",
+              "RelativeDocumentMoniker": "Models\\CustomForm.cs",
+              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\CustomForm.cs",
+              "RelativeToolTip": "Models\\CustomForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T10:41:23.967Z",
+              "WhenOpened": "2025-07-01T06:26:50.489Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IGenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IGenericRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Contract\\IGenericRepository.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IGenericRepository.cs",
-              "RelativeToolTip": "Repositories\\Contract\\IGenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "MortgageDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\MortgageDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\MortgageDbContext.cs",
+              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\MortgageDbContext.cs*",
+              "RelativeToolTip": "Models\\MortgageDbContext.cs*",
+              "ViewState": "AgIAABgAAAAAAAAAAAA4wBoAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T10:41:22.631Z",
+              "WhenOpened": "2025-07-01T06:13:24.085Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\EmployeeRepository.cs",
+              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\EmployeeRepository.cs",
+              "RelativeToolTip": "Repositories\\EmployeeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T12:38:22.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "QuestionRepository.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\QuestionRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\QuestionRepository.cs",
@@ -130,33 +156,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IFormDataRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IFormDataRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Contract\\IFormDataRepository.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IFormDataRepository.cs",
-              "RelativeToolTip": "Repositories\\Contract\\IFormDataRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T10:41:18.539Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
               "Title": "CustomFormsController.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Controllers\\CustomFormsController.cs",
               "RelativeDocumentMoniker": "Controllers\\CustomFormsController.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Controllers\\CustomFormsController.cs*",
-              "RelativeToolTip": "Controllers\\CustomFormsController.cs*",
-              "ViewState": "AgIAABgAAAAAAAAAAADwvykAAABQAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Controllers\\CustomFormsController.cs",
+              "RelativeToolTip": "Controllers\\CustomFormsController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAIwCYAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-30T09:15:37.996Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "IEmployeeRepository.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IEmployeeRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Contract\\IEmployeeRepository.cs",
@@ -169,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ICustomFormsRepository.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\ICustomFormsRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Contract\\ICustomFormsRepository.cs",
@@ -182,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ICustomerRepository.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\ICustomerRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Contract\\ICustomerRepository.cs",
@@ -191,19 +204,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-30T10:41:09.296Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FormDataRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\FormDataRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\FormDataRepository.cs",
-              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\FormDataRepository.cs",
-              "RelativeToolTip": "Repositories\\FormDataRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T10:15:45.274Z",
               "EditorCaption": ""
             }
           ]

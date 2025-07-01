@@ -194,7 +194,7 @@
     "ContainingType": "Backend.Controllers.CustomFormsController",
     "Method": "CheckentryByCustomerId",
     "RelativePath": "api/CustomForms/CheckentryByCustomerId/{CustomerId}",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [

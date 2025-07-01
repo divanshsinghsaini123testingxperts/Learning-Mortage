@@ -26,7 +26,6 @@ public partial class MortgageDbContext : DbContext
 
     public virtual DbSet<Question> Questions { get; set; }
     public virtual DbSet<GetEmployeeDTO> GetEmployeeDTO { get; set; }
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Server=TXCHD-PC-016\\SQLEXPRESS;Database=MortgageDB;Trusted_Connection=True;TrustServerCertificate=True;");
 
@@ -92,7 +91,7 @@ public partial class MortgageDbContext : DbContext
 
         modelBuilder.Entity<FormDatum>(entity =>
         {
-            entity.HasKey(e => e.Entryid).HasName("PK__FormData__F57AD6DF48F19888");
+            entity.HasKey(e => e.Entryid).HasName("PK__FormData__F57AD6DF778547C8");
 
             entity.Property(e => e.Answer)
                 .HasMaxLength(255)
@@ -100,10 +99,9 @@ public partial class MortgageDbContext : DbContext
 
             entity.HasOne(d => d.Form).WithMany(p => p.FormData)
                 .HasForeignKey(d => d.FormId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__FormData__Answer__339FAB6E");
+                .HasConstraintName("FK__FormData__FormId__367C1819");
         });
-
+        
         modelBuilder.Entity<Question>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Question__3214EC075E928694");

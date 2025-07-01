@@ -2,6 +2,8 @@ import React, { useEffect , useState } from 'react'
 import { useParams } from 'react-router-dom';
 import  Question  from './Question.jsx'
 import { useNavigate } from 'react-router-dom';
+import './ViewQuestions.css';
+
 export default function ViewQuestion() {
   const { Id ,formId } = useParams();
   const [questions, setQuestions] = useState([]);
@@ -52,113 +54,110 @@ export default function ViewQuestion() {
 }, [formId, Id]);
 
 const handleSubmit = () => {
-  if (!selectedCustomer) {
-    setCustomerError('Please select a customer.');
-    return;
-  }
-  async function IsResponseExists() {
-    const response = await fetch(`https://localhost:7294/api/CustomForms/CheckentryByCustomerId/${selectedCustomer}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formId)
-    });
-    return response.json();
-  }
-  const convertedResponses = (optionArray)=>{
-      var s = '';
-      for (let i = 0; i < optionArray.length; i++) {
-          if (optionArray[i]) {
-            if( i == 0){
-              s += optionArray[i];
+    if (!selectedCustomer) {
+      setCustomerError('Please select a customer.');
+      return;
+    }
+    
+    const convertedResponses = (optionArray)=>{
+        var s = '';
+        for (let i = 0; i < optionArray.length; i++) {
+            if (optionArray[i]) {
+              if( i == 0){
+                s += optionArray[i];
 
-            }else{ 
-              s = s + '^' + optionArray[i];}
-          }
-      }
-      return s;
-  }
-  //now we need to bind all the details into a array and send it to backend 
-  // questionId , FormId , CustomerId , Answer ( if this is text then sent it as well , if it is checkbox then concatinate the values and send it as a string )
-  const responses = questions.map((question, index) => {
-    return {
-      questionId: question.id,
-      formId: formId,
-      customerId: selectedCustomer,
-      answer: typeof formResponse[index] === 'string' ? formResponse[index] :  convertedResponses(formResponse[index]), // Use the response from formResponse or an empty string if not provided
-    };
-  });
+              }else{ 
+                s = s + '^' + optionArray[i];}
+            }
+        }
+        return s;
+    }
+    //now we need to bind all the details into a array and send it to backend 
+    // questionId , FormId , CustomerId , Answer ( if this is text then sent it as well , if it is checkbox then concatinate the values and send it as a string )
+      const responses = questions.map((question, index) => {
+        return {
+          questionId: question.id,
+          formId: formId,
+          customerId: selectedCustomer,
+          answer: typeof formResponse[index] === 'string' ? formResponse[index] :  convertedResponses(formResponse[index]), // Use the response from formResponse or an empty string if not provided
+        };
+      });
 
 
-  console.log('Responses to be submitted:', responses);
-   async function submitResponses() {
-        await fetch(`https://localhost:7294/api/CustomForms/AddFormEntry/${formId}`, {
+    console.log('Responses to be submitted:', responses);
+    async function submitResponses() {
+          await fetch(`https://localhost:7294/api/CustomForms/AddFormEntry/${formId}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify( responses ),
+        }).then((res) => {
+            if (!res.ok) throw new Error('Failed to submit responses');
+            return res.text();
+          })
+          .then((data) => {
+            console.log('Form submitted successfully:', data);
+            navigate(`/home/${Id}/View_forms`);
+          })
+          .catch((err) => {
+            console.error('Error during form submission:', err);
+          });
+        }
+    async function IsResponseExists() {
+      const response = await fetch(`https://localhost:7294/api/CustomForms/CheckentryByCustomerId/${selectedCustomer}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify( responses ),
-      })
-        .then((res) => {
-          if (!res.ok) throw new Error('Failed to submit responses');
-          return res.text();
-        })
-        .then((data) => {
-          console.log('Form submitted successfully:', data);
-        })
-        .catch((err) => {
-          console.error('Error during form submission:', err);
-        });
-      }
-
-
-  IsResponseExists().then((exists) => {
-      if (!exists) {
-        submitResponses().then(() => {
-          alert('Response submitted successfully!');
-          // navigate('/some-other-page'); // Change this to your desired route
-        });
-      } else {
-        alert('Response already exists for this customer. Please select a different customer or update the existing response.');
-      }
-  });
+        body: JSON.stringify(formId)
+      }).then((res) => {
+        if (!res.ok) throw new Error('Failed to check if response exists');
+      return res.json();
+    }).then((data) => {
+        console.log('Response exists:', data);
+        if (data) {
+          alert('Response already exists for this customer. Please edit the existing response.');
+          //refresh the page 
+          navigate(`/home/${Id}/View_forms/${formId}`);
+        }
+      });
     }
-};
+    IsResponseExists();
+    submitResponses();
+}
 
   return (
-     <>
-        
-            <h3>{formName}</h3>
-            <h3>*All Questions are mandatory</h3>
-            <label>Select Customer - </label>
-            <select
-              value={selectedCustomer}
-              onChange={e => {
-                setSelectedCustomer(e.target.value);
-                setCustomerError('');
-              }}
-              style={{ marginBottom: '1rem' }}
-            >
-              <option value="">-- Please select a customer --</option>
-              {customers.map(cust => (
-                <option key={cust.id} value={cust.id}>
-                  {cust.name}
-                </option>
-              ))}
-            </select>
-            {customerError && <span style={{ color: 'red', marginLeft: 8 }}>{customerError}</span>}
-             
-
-            
-            {questions.map((question , index) => (
-                <Question 
-                idx = {index} 
-                key={question.id}
-                question = {question}
-                setFormResponse = {setFormResponse} 
-                formResponse = {formResponse}
-                />
-            ))}
-            <button onClick={handleSubmit} style={{ marginTop: '1rem' }}>
-              Submit
-            </button>
-     </>
+    <div className="view-questions-container">
+      <div className="view-questions-header">
+        <h3>{formName}</h3>
+        <h3>*All Questions are mandatory</h3>
+      </div>
+      <label className="customer-select-label">Select Customer - </label>
+      <select
+        className="customer-select"
+        value={selectedCustomer}
+        onChange={e => {
+          setSelectedCustomer(e.target.value);
+          setCustomerError('');
+        }}
+      >
+        <option value="">-- Please select a customer --</option>
+        {customers.map(cust => (
+          <option key={cust.id} value={cust.id}>
+            {cust.name}
+          </option>
+        ))}
+      </select>
+      {customerError && <span className="customer-error">{customerError}</span>}
+      {questions.map((question , index) => (
+        <Question 
+          idx={index} 
+          key={question.id}
+          question={question}
+          setFormResponse={setFormResponse} 
+          formResponse={formResponse}
+        />
+      ))}
+      <button onClick={handleSubmit} className="submit-btn">
+        Submit
+      </button>
+    </div>
   )
 }

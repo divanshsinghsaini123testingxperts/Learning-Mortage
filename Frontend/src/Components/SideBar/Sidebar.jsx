@@ -39,7 +39,7 @@ function Sidebar() {
                 `nav-link ${isActive ? 'active' : ''}`
               }
             >
-              View Forms
+              New Submission
             </NavLink>
           </li>
         </ul>

@@ -177,7 +177,7 @@
       }
     },
     "/api/CustomForms/CheckentryByCustomerId/{CustomerId}": {
-      "get": {
+      "post": {
         "tags": [
           "CustomForms"
         ],

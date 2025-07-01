@@ -1,14 +1,14 @@
 import React from 'react';
+import './Question.css';
 
 function Question(props) {
   const { idx, question , setFormResponse , formResponse} = props;
 
   return (
-    <div>
-      
-      <p>Q{idx + 1}</p>
-      <p>English: {question.engQuestion}</p>
-      <p>French: {question.frenchQuestion}</p>
+    <div className="question-card">
+      <div className="question-title">Q{idx + 1}</div>
+      <div className="question-title">English: {question.engQuestion}</div>
+      <div className="question-title">French: {question.frenchQuestion}</div>
       {question.answerFormat === 'text' && (
         <input
           type="text"
@@ -38,12 +38,11 @@ function Question(props) {
           ))}
         </select>
       )}
-
       {/* now we are looking for checkboxes */}
       {question.answerFormat === 'checkbox' && (
-        <div>
+        <div className="question-options">
           {question.options.map((option, index) => (
-            <label key={index}>
+            <label className="question-option-label" key={index}>
               <input
                 type="checkbox"
                 checked={formResponse[idx]?.includes(option) || false}
