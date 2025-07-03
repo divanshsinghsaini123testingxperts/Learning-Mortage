@@ -11,11 +11,11 @@ public partial class Employee
 
     public string? Email { get; set; }
 
-    public string? Password { get; set; }
-
-    public string? Role { get; set; }
+    public int UserId { get; set; }
 
     public virtual ICollection<CustomForm> CustomForms { get; set; } = new List<CustomForm>();
 
     public virtual ICollection<Customer> Customers { get; set; } = new List<Customer>();
+
+    public virtual User User { get; set; } = null!;
 }

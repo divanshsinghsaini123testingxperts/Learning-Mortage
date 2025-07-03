@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\models\\entity\\logindetailsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:models\\entity\\logindetailsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|c:\\users\\testing\\desktop\\learning mortgage\\backend\\models\\mortgagedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A0E331B-0BBF-49BE-9A9D-0798C9D3448D}|Backend.csproj|solutionrelative:models\\mortgagedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -50,8 +58,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginDetailsDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\Entity\\LoginDetailsDTO.cs",
+              "RelativeDocumentMoniker": "Models\\Entity\\LoginDetailsDTO.cs",
+              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\Entity\\LoginDetailsDTO.cs",
+              "RelativeToolTip": "Models\\Entity\\LoginDetailsDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T10:06:24.164Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -78,7 +99,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T09:53:05.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
@@ -91,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -104,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "CustomForm.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\CustomForm.cs",
               "RelativeDocumentMoniker": "Models\\CustomForm.cs",
@@ -117,20 +151,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MortgageDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\MortgageDbContext.cs",
               "RelativeDocumentMoniker": "Models\\MortgageDbContext.cs",
               "ToolTip": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Models\\MortgageDbContext.cs",
               "RelativeToolTip": "Models\\MortgageDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAwwB8AAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-01T06:13:24.085Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "EmployeeRepository.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\EmployeeRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\EmployeeRepository.cs",
@@ -143,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "QuestionRepository.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\QuestionRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\QuestionRepository.cs",
@@ -156,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "CustomFormsController.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Controllers\\CustomFormsController.cs",
               "RelativeDocumentMoniker": "Controllers\\CustomFormsController.cs",
@@ -169,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "IEmployeeRepository.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\IEmployeeRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Contract\\IEmployeeRepository.cs",
@@ -182,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "ICustomFormsRepository.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\ICustomFormsRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Contract\\ICustomFormsRepository.cs",
@@ -195,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "ICustomerRepository.cs",
               "DocumentMoniker": "C:\\Users\\Testing\\Desktop\\Learning Mortgage\\Backend\\Repositories\\Contract\\ICustomerRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Contract\\ICustomerRepository.cs",

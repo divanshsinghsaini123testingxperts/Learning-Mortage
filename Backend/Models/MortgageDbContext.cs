@@ -25,6 +25,9 @@ public partial class MortgageDbContext : DbContext
     public virtual DbSet<FormDatum> FormData { get; set; }
 
     public virtual DbSet<Question> Questions { get; set; }
+
+    public virtual DbSet<User> Users { get; set; }
+
     public virtual DbSet<GetEmployeeDTO> GetEmployeeDTO { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Server=TXCHD-PC-016\\SQLEXPRESS;Database=MortgageDB;Trusted_Connection=True;TrustServerCertificate=True;");
@@ -51,22 +54,31 @@ public partial class MortgageDbContext : DbContext
 
         modelBuilder.Entity<Customer>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Customer__3214EC07162596DC");
+            entity.HasKey(e => e.Id).HasName("PK__Customer__3214EC07014CE573");
+
+            entity.HasIndex(e => e.UserId, "UQ__Customer__1788CC4DF10BB3E2").IsUnique();
+
+            entity.HasIndex(e => e.Email, "UQ__Customer__A9D1053418A2A81E").IsUnique();
 
             entity.Property(e => e.Address)
-                .HasMaxLength(100)
+                .HasMaxLength(255)
                 .IsUnicode(false);
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
                 .IsUnicode(false);
             entity.Property(e => e.Name)
-                .HasMaxLength(100)
+                .HasMaxLength(255)
                 .IsUnicode(false);
 
             entity.HasOne(d => d.Emp).WithMany(p => p.Customers)
                 .HasForeignKey(d => d.EmpId)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK__Customers__EmpId__09A971A2");
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Customers__EmpId__503BEA1C");
+
+            entity.HasOne(d => d.User).WithOne(p => p.Customer)
+                .HasForeignKey<Customer>(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Customers__UserI__51300E55");
         });
 
         modelBuilder.Entity<Employee>(entity =>
@@ -81,12 +93,12 @@ public partial class MortgageDbContext : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
                 .IsUnicode(false);
-            entity.Property(e => e.Password)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.Role)
-                .HasMaxLength(100)
-                .IsUnicode(false);
+            entity.Property(e => e.UserId).HasColumnName("UserID");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Employees)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Employees__UserI__5224328E");
         });
 
         modelBuilder.Entity<FormDatum>(entity =>
@@ -101,7 +113,7 @@ public partial class MortgageDbContext : DbContext
                 .HasForeignKey(d => d.FormId)
                 .HasConstraintName("FK__FormData__FormId__367C1819");
         });
-        
+
         modelBuilder.Entity<Question>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Question__3214EC075E928694");
@@ -120,6 +132,17 @@ public partial class MortgageDbContext : DbContext
                 .HasForeignKey(d => d.FormId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK__Questions__FormI__29221CFB");
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC076CAF944B");
+
+            entity.HasIndex(e => e.Email, "UQ__Users__536C85E43D461860").IsUnique();
+
+            entity.Property(e => e.Email).HasMaxLength(100);
+            entity.Property(e => e.Password).HasMaxLength(255);
+            entity.Property(e => e.Role).HasMaxLength(20);
         });
 
         OnModelCreatingPartial(modelBuilder);
